@@ -1,0 +1,90 @@
+// FONT
+@font-face {
+  font-family: "Fira Sans";
+  src: local("Fira Sans-Regular"),
+    local("Fira Sans Regular"),
+    url("../fonts/FiraSans-Regular.woff") format("woff"),
+    url("../fonts/FiraSans-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  src: local("Fira Sans-Medium"),
+    local("Fira Sans Medium"),
+    url("../fonts/FiraSans-Medium.woff2") format("woff2"),
+    url("../fonts/FiraSans-Medium.woff") format("woff");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  src: local("Fira Sans-Bold"),
+    local("Fira Sans Bold"),
+    url("../fonts/FiraSans-Bold.woff") format("woff"),
+    url("../fonts/FiraSans-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway-ExtraBold"),
+    local("Raleway Extra Bold"),
+    url("../fonts/Raleway-ExtraBold.woff") format("woff"),
+    url("../fonts/Raleway-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway-Black"),
+    local("Raleway Black"),
+    url("../fonts/Raleway-Black.woff") format("woff"),
+    url("../fonts/Raleway-Black.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat-Bold"),
+    local("Montserrat Bold"),
+    url("../fonts/Montserrat-Bold.woff") format("woff"),
+    url("../fonts/Montserrat-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+// GENERAL
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  max-width: $mobile;
+  font-size: $font-size;
+  font-family: $font-family--primary;
+  color: $text-color;
+  background-color: $color-background;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
