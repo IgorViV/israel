@@ -77,8 +77,9 @@ html {
 }
 
 body {
-  max-width: $mobile;
+  min-width: $mobile;
   font-size: $font-size;
+  line-height: 17px;
   font-family: $font-family--primary;
   color: $text-color;
   background-color: $color-background;

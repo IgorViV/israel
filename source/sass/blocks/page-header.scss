@@ -1,0 +1,37 @@
+.page-header {
+  display: flex;
+  width: 83.601%;
+  margin-bottom: 458px;
+}
+
+.page-header__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-header__item {
+  margin: 0;
+  font-family: Fira Sans;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.page-header__btn {
+  padding: 0;
+  font-family: Fira Sans;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: $text-color;
+  font-variant: small-caps;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px dashed $text-color;
+  cursor: pointer;
+}
