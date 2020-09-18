@@ -89,3 +89,10 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+// - мобильная версия — 320px - 767px
+// @media (min-width: $mobile) and (max-width: $tablet - 1px) {}
+// - планшетная версия — 768px - 1023px
+// @media (min-width: $tablet) and (max-width: $desktop - 1px) {}
+// - десктопная версия — от 1024px и выше
+// @media (min-width: $desktop) {}

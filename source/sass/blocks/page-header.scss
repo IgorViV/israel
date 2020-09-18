@@ -1,30 +1,101 @@
 .page-header {
-  display: flex;
-  width: 83.601%;
-  margin-bottom: 458px;
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  width: 83.6017%;
+  width: 1142px;
+  margin-bottom: 433px;
+  transform: translateX(-50%);
+
+  @media (max-width: 1142px) {
+    width: 100%;
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  @media (min-width: $mobile) and (max-width: 420px) {
+    padding: 0;
+  }
 }
 
 .page-header__list {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @media (min-width: $mobile) and (max-width: 420px) {
+    flex-direction: column;
+    align-items: flex-end;
+  }
 }
 
 .page-header__item {
   margin: 0;
-  font-family: Fira Sans;
+  font-family: $font-family--primary;
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
+
+  @media (max-width: $tablet - 1px) {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &--phone {
+    margin-right: 31.7863%;
+
+    @media (max-width: 1142px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    @media (min-width: $mobile) and (max-width: 420px) {
+      margin-left: auto;
+      margin-right: 7px;
+    }
+  }
+
+  &--logo {
+    margin-right: 33.8003%;
+    width: 137px;
+
+    img {
+      width: 137px;
+      height: 48px;
+    }
+
+    @media (max-width: 1142px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: $tablet - 1px) {
+      img {
+        width: 120px;
+        height: 42px;
+      }
+    }
+
+    @media (min-width: $mobile) and (max-width: 420px) {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      margin-right: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &--order-call {
+    margin-right: 0;
+  }
 }
 
 .page-header__btn {
   padding: 0;
-  font-family: Fira Sans;
+  font-family: $font-family--primary;
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
@@ -34,4 +105,14 @@
   border: none;
   border-bottom: 1px dashed $text-color;
   cursor: pointer;
+
+  @media (max-width: $tablet - 1px) {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  @media (min-width: $mobile) and (max-width: 420px) {
+    margin-top: 8px;
+    margin-right: 9px;
+  }
 }
