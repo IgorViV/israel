@@ -77,6 +77,7 @@ html {
 }
 
 body {
+  position: relative;
   min-width: $mobile;
   font-size: $font-size;
   line-height: 17px;

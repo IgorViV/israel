@@ -2,6 +2,7 @@
   position: absolute;
   top: 32px;
   left: 50%;
+  z-index: 2;
   width: 83.6017%;
   width: 1142px;
   margin-bottom: 433px;
@@ -83,6 +84,7 @@
       position: absolute;
       top: 50%;
       left: 16px;
+      z-index: 3;
       margin-right: 0;
       transform: translateY(-50%);
     }

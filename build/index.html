@@ -46,5 +46,33 @@
   <footer class="page-footer">
 
   </footer>
+  <div class="modal-call-wrapper hidden">
+    <div class="modal-order-call">
+      <h3 class="modal-order-call__title">Заказать звонок</h3>
+      <p class="modal-order-call__text">Оставьте ваши контактные данные, мы свяжемся<br> с вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
+      <form class="modal-order-call__form" action="#">
+        <p class="modal-order-call__form-group modal-order-call__form-group--name">
+          <label class="modal-order-call__form-label" for="name">
+            <span class="visually-hidden">Имя</span>
+          </label>
+          <input class="modal-order-call__form-input" id="name" type="text" name="name" placeholder="имя" required="">
+        </p>
+        <p class="modal-order-call__form-group modal-order-call__form-group--phone">
+          <label class="modal-order-call__form-label" for="phone">
+            <span class="visually-hidden">Телефон</span>
+          </label>
+          <input class="modal-order-call__form-input" id="phone" type="tel" name="phone" placeholder="телефон" required="">
+        </p>
+        <button class="modal-order-call__btn-submit" type="submit">перезвоните мне</button>
+        <p class="modal-order-call__form-group modal-order-call__form-group--consent">
+          <input class="modal-order-call__form-input modal-order-call__form-input--consent" type="checkbox" id="consent" name="consent">
+          <label class="modal-order-call__form-label modal-order-call__form-label--consent" for="consent">
+            Нажимая на кнопку, вы даёте согласие на обработку персональных данных
+          </label>
+        </p>
+      </form>
+      <button class="modal-order-call__btn-close" type="button" title="Закрыть окно"></button>
+    </div>
+  </div>
 </body>
 </html>
