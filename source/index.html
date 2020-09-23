@@ -46,33 +46,47 @@
   <footer class="page-footer">
 
   </footer>
-  <div class="modal-call-wrapper hidden">
-    <div class="modal-order-call">
-      <h3 class="modal-order-call__title">Заказать звонок</h3>
-      <p class="modal-order-call__text">Оставьте ваши контактные данные, мы свяжемся<br> с вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
-      <form class="modal-order-call__form" action="#">
-        <p class="modal-order-call__form-group modal-order-call__form-group--name">
-          <label class="modal-order-call__form-label" for="name">
-            <span class="visually-hidden">Имя</span>
-          </label>
-          <input class="modal-order-call__form-input" id="name" type="text" name="name" placeholder="имя" required="">
-        </p>
-        <p class="modal-order-call__form-group modal-order-call__form-group--phone">
-          <label class="modal-order-call__form-label" for="phone">
-            <span class="visually-hidden">Телефон</span>
-          </label>
-          <input class="modal-order-call__form-input" id="phone" type="tel" name="phone" placeholder="телефон" required="">
-        </p>
-        <button class="modal-order-call__btn-submit" type="submit">перезвоните мне</button>
-        <p class="modal-order-call__form-group modal-order-call__form-group--consent">
-          <input class="modal-order-call__form-input modal-order-call__form-input--consent" type="checkbox" id="consent" name="consent">
-          <label class="modal-order-call__form-label modal-order-call__form-label--consent" for="consent">
-            Нажимая на кнопку, вы даёте согласие на обработку персональных данных
-          </label>
-        </p>
-      </form>
-      <button class="modal-order-call__btn-close" type="button" title="Закрыть окно"></button>
+  <!-- Модальные окна -->
+  <div class="modal-overlay hidden">
+    <!-- Заказать звонок -->
+    <div class="modal modal--order-call hidden">
+      <div class="modal__content-wrapper">
+        <h3 class="modal__title">Заказать звонок</h3>
+        <p class="modal__text">Оставьте ваши контактные данные, мы&nbsp;свяжемся с&nbsp;вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
+        <form class="modal__form" action="#" method="GET">
+          <p class="modal__form-group modal__form-group--name">
+            <label class="modal__form-label" for="name">
+              <span class="visually-hidden">Имя</span>
+            </label>
+            <input class="modal__form-input" id="name" type="text" name="name" placeholder="имя" required="" autofocus="">
+          </p>
+          <p class="modal__form-group modal__form-group--phone">
+            <label class="modal__form-label" for="phone">
+              <span class="visually-hidden">Телефон</span>
+            </label>
+            <input class="modal__form-input" id="phone" type="tel" name="phone" placeholder="телефон" required="">
+          </p>
+          <button class="modal__btn modal__btn--submit" type="submit">перезвоните мне</button>
+          <p class="modal__form-group modal__form-group--consent">
+            <input class="modal__form-input modal__form-input--consent" type="checkbox" id="consent" name="consent">
+            <label class="modal__form-label modal__form-label--consent" for="consent">
+              Нажимая на кнопку, вы даёте согласие на обработку персональных данных
+            </label>
+          </p>
+        </form>
+      </div>
+      <button class="modal__btn-close modal__btn-close--call" type="button" title="Закрыть окно"></button>
+    </div>
+  <!-- Заявка принята -->
+    <div class="modal modal--accepted hidden">
+      <div class="modal__content-wrapper modal__content-wrapper--accepted">
+        <h3 class="modal__title modal__title--accepted">Заявка принята</h3>
+        <p class="modal__text modal__text--accepted">Мы приняли ваши данные и вскоре мы перезвоним вам для уточнения деталей!</p>
+        <button class="modal__btn modal__btn--accepted" type="button">Понятно</button>
+      </div>
+      <button class="modal__btn-close modal__btn-close--accepted" type="button" title="Закрыть окно"></button>
     </div>
   </div>
+  <script src="js/modal.js"></script>
 </body>
 </html>
