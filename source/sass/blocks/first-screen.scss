@@ -1,0 +1,60 @@
+.first-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 1366px;
+  min-height: 906px;
+  margin: 0 auto;
+  background-image: url("../img/bg_girl_desktop@x1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    background-image: url("../img/bg_girl_desktop@x2.png");
+  }
+
+  @media (max-width: $tablet - 1px) {
+    background-image: url("../img/bg_girl_mobile@x1.png");
+
+    @media (min-resolution: 144dpi),
+      (min-resolution: 1.5dppx) {
+      background-image: url("../img/bg_girl_mobile@x2.png");
+    }
+  }
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    min-height: 632px;
+    padding-top: 20px;
+    background-size: 100%;
+  }
+}
+
+.first-screen__promo {
+  width: 343px;
+  margin-bottom: 32px;
+  font-family: $font-family--primary;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+
+  @media (max-width: $tablet - 1px) {
+    width: 288px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.first-screen__help-scroll {
+  margin-bottom: 140px;
+}
+
+.first-screen__help-scroll-img {
+  width: 76px;
+  height: 132px;
+}
