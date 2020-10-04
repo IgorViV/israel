@@ -73,9 +73,9 @@
               <li class="programms__item">
                 <input class="visually-hidden" type="radio" name="option" id="general">
                 <label for="general">
-                  <div class="programms__icon-wrapper">
+                  <span class="programms__icon-wrapper">
                     <img src="/img/icon_david.svg" width="28" height="33" alt="David"> <!-- заменить на SVG -->
-                  </div>
+                  </span>
                   <span>
                     Общие
                   </span>
@@ -93,9 +93,9 @@
               <li class="programms__item">
                 <input class="visually-hidden" type="radio" name="option" id="academic" checked="">
                 <label for="academic">
-                  <div class="programms__icon-wrapper">
+                  <span class="programms__icon-wrapper">
                     <img src="/img/icon_cap.svg" width="36" height="35" alt="Cap"> <!-- заменить на SVG -->
-                  </div>
+                  </span>
                   <span>
                     Академические
                   </span>
@@ -113,9 +113,9 @@
               <li class="programms__item">
                 <input class="visually-hidden" type="radio" name="option" id="internships">
                 <label for="internships">
-                  <div class="programms__icon-wrapper">
+                  <span class="programms__icon-wrapper">
                     <img src="/img/icon_case.svg" width="32" height="25" alt="Case"> <!-- заменить на SVG -->
-                  </div>
+                  </span>
                   <span>
                     Стажировки
                   </span>
@@ -133,9 +133,9 @@
               <li class="programms__item">
                 <input class="visually-hidden" type="radio" name="option" id="volunteerism">
                 <label for="volunteerism">
-                  <div class="programms__icon-wrapper">
+                  <span class="programms__icon-wrapper">
                     <img src="/img/icon_hand.svg" width="32" height="29" alt="Hand"> <!-- заменить на SVG -->
-                  </div>
+                  </span>
                   <span>
                     Волонтёрство
                   </span>
@@ -153,9 +153,9 @@
               <li class="programms__item">
                 <input class="visually-hidden" type="radio" name="option" id="religious">
                 <label for="religious">
-                  <div class="programms__icon-wrapper">
+                  <span class="programms__icon-wrapper">
                     <img src="/img/icon_candles.svg" width="28" height="33" alt="Candles">  <!-- заменить на SVG -->
-                  </div>
+                  </span>
                   <span>
                     Религиозные
                   </span>
@@ -185,7 +185,7 @@
               Номер телефона
             </span>
           </label>
-          <input type="tel" name="phone" id="user-phone" checked>
+          <input type="tel" name="phone" id="user-phone">
           <button type="submit">перезвоните мне</button>
         </form>
       </section>
@@ -222,11 +222,11 @@
         <p class="life__text">
           Помимо учёбы, в рамках программе у вас будет возможность путешествовать по стране и познакомиться с богатой культурно-исторической жизнью Израиля и его жителей.
         </p>
-        <div class="life__slider-wrapper">
+        <div class="life__content-wrapper">
           <ul class="life__slider">
             <li class="life__slider-item">
               <span>
-                Экскурсии по Израилюи знакомство с его историей
+                Экскурсии по Израилю и знакомство с его историей
               </span>
             </li>
             <li class="life__slider-item">
@@ -519,7 +519,6 @@
           </p>
         </div>
         <div class="contacts__map">
-
         </div>
         <div class="contacts__feedback">
           <p class="contacts__feedback-text contacts__feedback-text--medium">
@@ -536,10 +535,10 @@
               <input class="contacts__form-input" id="user-name" type="text" name="name" placeholder="имя" required="">
             </p>
             <p class="contacts__form-group contacts__form-group--phone">
-              <label class="contacts__form-label" for="user-phone">
+              <label class="contacts__form-label" for="phone">
                 <span class="visually-hidden">Телефон</span>
               </label>
-              <input class="contacts__form-input" id="user-phone" type="tel" name="phone" placeholder="телефон" required="">
+              <input class="contacts__form-input" id="phone" type="tel" name="phone" placeholder="телефон" required="">
             </p>
             <button class="contacts__btn modal__btn--submit" type="submit">перезвоните мне</button>
           </form>
@@ -595,10 +594,10 @@
             <input class="modal__form-input" id="name" type="text" name="name" placeholder="имя" required="" autofocus="">
           </p>
           <p class="modal__form-group modal__form-group--phone">
-            <label class="modal__form-label" for="phone">
+            <label class="modal__form-label" for="phone-user">
               <span class="visually-hidden">Телефон</span>
             </label>
-            <input class="modal__form-input" id="phone" type="tel" name="phone" placeholder="телефон" required="">
+            <input class="modal__form-input" id="phone-user" type="tel" name="phone" placeholder="телефон" required="">
           </p>
           <button class="modal__btn modal__btn--submit" type="submit">перезвоните мне</button>
           <p class="modal__form-group modal__form-group--consent">
