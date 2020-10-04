@@ -175,19 +175,23 @@
         </div>
       </section>
       <section class="want-to-go">
-        <h2 class="want-to-go__title">Хочу поехать!</h2>
-        <p class="want-to-go__text">
-          Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на все вопросы!
-        </p>
-        <form class="want-to-go__form" action="#" method="GET">
-          <label for="user-phone">
-            <span class="visually-hidden">
-              Номер телефона
-            </span>
-          </label>
-          <input type="tel" name="phone" id="user-phone">
-          <button type="submit">перезвоните мне</button>
-        </form>
+        <div class="want-to-go__wrapper">
+          <h2 class="want-to-go__title">Хочу поехать!</h2>
+          <p class="want-to-go__text">
+            Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на все вопросы!
+          </p>
+          <form class="want-to-go__form form form--want-to-go" action="#" method="GET">
+            <div class="form__group form__group--want-to-go">
+              <label class="form__label" for="user-phone">
+                <span class="visually-hidden">
+                  Номер телефона
+                </span>
+              </label>
+              <input class="form__input form__input--tel form__input--want-to-go" type="tel" name="phone" id="user-phone" placeholder="телефон">
+            </div>
+            <button class="form__btn form__btn--want-to-go" type="submit">перезвоните мне</button>
+          </form>
+        </div>
       </section>
       <section class="how-to-go">
         <h2 class="how-to-go__title">Как поехать</h2>
@@ -586,7 +590,7 @@
       <div class="modal__content-wrapper">
         <h3 class="modal__title">Заказать звонок</h3>
         <p class="modal__text">Оставьте ваши контактные данные, мы&nbsp;свяжемся с&nbsp;вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
-        <form class="modal__form" action="#" method="GET">
+        <form class="modal__form form" action="#" method="GET">
           <p class="modal__form-group modal__form-group--name">
             <label class="modal__form-label" for="name">
               <span class="visually-hidden">Имя</span>
