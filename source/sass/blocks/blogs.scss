@@ -1,0 +1,90 @@
+.blogs {
+  margin-top: 96px;
+  padding-top: 120px;
+  padding-right: 167px;
+  padding-bottom: 196px;
+  background-size: auto 100%;
+  background-image: url("../img/bg_hashtag_desktop@x1.png");
+  background-position: left center;
+  background-repeat: no-repeat;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    margin-top: 80px;
+    padding-top: 0;
+    padding-right: 0;
+    background-size: 632px auto;
+    background-position: left -69px top 44px;
+  }
+
+  @media (min-width: 532px) and (max-width: $tablet - 1px) {
+    background-position: center top 44px;
+  }
+}
+
+.blogs__wrapper {
+  width: 403px;
+  margin-left: auto;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    width: 320px;
+    margin: 0 auto;
+  }
+}
+
+.blogs__title {
+  margin: 0;
+  margin-bottom: 24px;
+  font-family: $font-family--headers;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 49px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: $color-blue;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    margin-bottom: 96px;
+    text-align: center;
+  }
+}
+
+.blogs__text {
+  margin: 0;
+  margin-bottom: 48px;
+  font-family: $font-family--primary;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 170%;
+  color: rgba(255, 255, 255, 0.87);
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12);
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    margin-bottom: 57px;
+    padding-left: 23px;
+    padding-right: 23px;
+    font-size: 16px;
+    line-height: 160%;
+  }
+}
+
+.blogs__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+  padding: 0;
+  padding-top: 18px;
+  padding-bottom: 17px;
+  text-decoration: none;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    width: 264px;
+    margin: 0 auto;
+  }
+
+  svg {
+    margin-right: 8px;
+    fill: #ffffff;
+  }
+}

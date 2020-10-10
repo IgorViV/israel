@@ -8,6 +8,7 @@
   background-repeat: no-repeat;
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    padding-bottom: 24px;
     background-image: none;
   }
 }
@@ -264,7 +265,7 @@
     position: absolute;
     left: 50%;
     bottom: 0;
-    transform: translate(-50%, -40px);
+    transform: translateX(-50%);
     z-index: 15;
     display: block;
     width: 64px;
