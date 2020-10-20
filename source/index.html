@@ -615,69 +615,84 @@
         </div>
       </section>
       <section class="contacts">
-        <h2 class="contacts__title">Узнать подробности</h2>
-        <div class="contacts__curator-wrapper">
-          <p class="contacts__position">
-            <label for="city">Ваш город:</label>
-            <input type="text" name="user-city" id="city" placeholder="новосибирск">
-          </p>
-          <div class="contacts__curator">
-            <img src="/img/photo_contacts_curator.jpg" width="112" height="112" alt="Фото куратора">
-            <p class="contacts__curator-name">
-              <span>Ваш куратор: </span><span id="curator-name">Анна Горелик</span>
-            </p>
-            <p class="contacts__curator-address">
-              Новосибирск, ул. Щетинкина 68, культурный центр «Бейт Менахем»
-            </p>
-            <ul class="contacts__curator-social">
-              <li class="contacts__curator-facebook">
-                <a href="#" title="Мой фейсбук" target="_blank">
-                  <span class="visually-hidden">Мой фейсбук</span>
-                  <img src="/img/icon_facebook.svg" width="12" height="24" alt="facebook">
-                </a>
-              </li>
-              <li class="contacts__curator-whatsapp">
-                <a href="#" title="Мой ватсап" target="_blank">
-                  <span class="visually-hidden">Мой ватсап</span>
-                  <img src="/img/icon_whatsapp.svg" width="24" height="24" alt="whatsapp">
-                </a>
-              </li>
-              <li class="contacts__curator-telegram">
-                <a href="#" title="Мой телеграм" target="_blank">
-                  <span class="visually-hidden">Мой телеграм</span>
-                  <img src="/img/icon_telegram.svg" width="24" height="24" alt="telegram">
-                </a>
-              </li>
-            </ul>
+        <div class="contacts__wrapper">
+          <div class="contacts__text-content">
+            <h2 class="contacts__title">Узнать подробности</h2>
+            <div class="contacts__detail">
+              <p class="contacts__position">
+                <img src="img/icon_marker-city.svg" width="12" height="18" alt="Маркер">
+                <span class="contacts__city">Ваш город:</span>
+                <span class="contacts__city contacts__city--name">новосибирск</span>
+                <img src="img/icon_gps.svg" width="16" height="15" alt="GPS">
+              </p>
+              <div class="contacts__card">
+                <div class="contacts__curator">
+                  <img class="contacts__curator-img" src="/img/photo_contacts_curator.jpg" width="112" height="112" alt="Фото куратора">
+                  <div class="contacts__about">
+                    <p class="contacts__curator-name">
+                      <span>Ваш куратор:</span><span id="curator-name">Анна Горелик</span>
+                    </p>
+                    <p class="contacts__curator-address">
+                      Новосибирск, ул. Щетинкина 68, культурный центр «Бейт Менахем»
+                    </p>
+                    <ul class="contacts__social">
+                      <li class="contacts__social-item contacts__social-item--facebook">
+                        <a href="#" title="Мой фейсбук" target="_blank">
+                          <svg width="11" height="22" viewBox="0 0 11 22">
+                            <path d="M8.53782 4.18705H10.4V0.943455C10.0787 0.899255 8.97383 0.799805 7.68704 0.799805C5.00211 0.799805 3.16287 2.48875 3.16287 5.59296V8.44981H0.200012V12.0759H3.16287V21.1998H6.79546V12.0768H9.63848L10.0898 8.45066H6.79461V5.95251C6.79546 4.90445 7.07764 4.18705 8.53782 4.18705Z"/>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="contacts__social-item contacts__social-item--whatsapp">
+                        <a href="#" title="Мой ватсап" target="_blank">
+                          <svg width="20" height="20" viewBox="0 0 20 20">
+                            <path d="M10.0025 0H9.9975C4.48375 0 0 4.485 0 10C0 12.1875 0.705 14.215 1.90375 15.8612L0.6575 19.5763L4.50125 18.3475C6.0825 19.395 7.96875 20 10.0025 20C15.5162 20 20 15.5138 20 10C20 4.48625 15.5162 0 10.0025 0ZM15.8212 14.1213C15.58 14.8025 14.6225 15.3675 13.8587 15.5325C13.3363 15.6437 12.6537 15.7325 10.3562 14.78C7.4175 13.5625 5.525 10.5763 5.3775 10.3825C5.23625 10.1887 4.19 8.80125 4.19 7.36625C4.19 5.93125 4.91875 5.2325 5.2125 4.9325C5.45375 4.68625 5.8525 4.57375 6.235 4.57375C6.35875 4.57375 6.47 4.58 6.57 4.585C6.86375 4.5975 7.01125 4.615 7.205 5.07875C7.44625 5.66 8.03375 7.095 8.10375 7.2425C8.175 7.39 8.24625 7.59 8.14625 7.78375C8.0525 7.98375 7.97 8.0725 7.8225 8.2425C7.675 8.4125 7.535 8.5425 7.3875 8.725C7.2525 8.88375 7.1 9.05375 7.27 9.3475C7.44 9.635 8.0275 10.5937 8.8925 11.3637C10.0087 12.3575 10.9137 12.675 11.2375 12.81C11.4787 12.91 11.7662 12.8863 11.9425 12.6988C12.1663 12.4575 12.4425 12.0575 12.7238 11.6638C12.9237 11.3813 13.1763 11.3462 13.4412 11.4462C13.7113 11.54 15.14 12.2462 15.4338 12.3925C15.7275 12.54 15.9212 12.61 15.9925 12.7338C16.0625 12.8575 16.0625 13.4388 15.8212 14.1213Z"/>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="contacts__social-item contacts__social-item--telegram">
+                        <a href="#" title="Мой телеграм" target="_blank">
+                          <svg width="22" height="18" viewBox="0 0 22 18">
+                            <path d="M8.63262 11.8632L8.2687 16.8888C8.78938 16.8888 9.01488 16.6692 9.2853 16.4055L11.7264 14.115L16.7847 17.7519C17.7124 18.2595 18.366 17.9922 18.6163 16.914L21.9365 1.63926L21.9374 1.63836C22.2317 0.291963 21.4415 -0.234534 20.5377 0.0957645L1.02135 7.43163C-0.310594 7.93922 -0.290427 8.66822 0.794932 8.99852L5.78447 10.5222L17.3742 3.40235C17.9196 3.04775 18.4155 3.24395 18.0076 3.59855L8.63262 11.8632Z"/>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <p class="contacts__note">
+                  Куратор является опытным специалистом агентства Сохнут и знает о проекте «Маса» всё! Свяжитесь с куратором, узнайте подробнее о программах и выберите свою!
+                </p>
+              </div>
+            </div>
           </div>
-          <p class="contacts__discription">
-            Куратор является опытным специалистом агентства Сохнут и знает о проекте «Маса» всё! Свяжитесь с куратором,узнайте подробнее о программах и выберите свою!
-          </p>
-        </div>
-        <div class="contacts__map">
-        </div>
-        <div class="contacts__feedback">
-          <p class="contacts__feedback-text contacts__feedback-text--medium">
-            Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!
-          </p>
-          <p class="contacts__feedback-text">
-            Мы не передаём данные третьим лицам. Ваши данные будут в безопасности и вам не придёт спам от нас!
-          </p>
-          <form class="contacts__form" action="#" method="GET">
-            <p class="contacts__form-group contacts__form-group--name">
-              <label class="contacts__form-label" for="user-name">
-                <span class="visually-hidden">Имя</span>
-              </label>
-              <input class="contacts__form-input" id="user-name" type="text" name="name" placeholder="имя" required="">
-            </p>
-            <p class="contacts__form-group contacts__form-group--phone">
-              <label class="contacts__form-label" for="phone">
-                <span class="visually-hidden">Телефон</span>
-              </label>
-              <input class="contacts__form-input" id="phone" type="tel" name="phone" placeholder="телефон" required="">
-            </p>
-            <button class="contacts__btn modal__btn--submit" type="submit">перезвоните мне</button>
-          </form>
+          <div class="contacts__map">
+          </div>
+          <div class="contacts__feedback">
+            <div class="contacts__feedback-text-wrapper">
+              <p class="contacts__feedback-text contacts__feedback-text--medium">
+                Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!
+              </p>
+              <p class="contacts__feedback-text">
+                Мы не передаём данные третьим лицам. Ваши данные будут в безопасности и вам не придёт спам от нас!
+              </p>
+            </div>
+            <form class="contacts__form form form--contacts" action="#" method="GET">
+              <p class="form__group form__group--contacts">
+                <label class="form__label" for="user-name">
+                  <span class="visually-hidden">Имя</span>
+                </label>
+                <input class="form__input form__input--name form__input--contacts" id="user-name" type="text" name="name" placeholder="имя" required="">
+              </p>
+              <p class="form__group form__group--contacts">
+                <label class="form__label" for="phone">
+                  <span class="visually-hidden">Телефон</span>
+                </label>
+                <input class="form__input form__input--tel form__input--contacts" id="phone" type="tel" name="phone" placeholder="телефон" required="">
+              </p>
+              <button class="form__btn form__btn--contacts" type="submit">перезвоните мне</button>
+            </form>
+          </div>
         </div>
       </section>
     </main>
