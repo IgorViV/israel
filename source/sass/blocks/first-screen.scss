@@ -4,36 +4,34 @@
   justify-content: flex-end;
   align-items: center;
   max-width: 1366px;
-  min-height: 906px;
   margin: 0 auto;
-  background-image: url("../img/bg_girl_desktop@x1.png");
-  background-position: center;
-  background-size: cover;
+  padding-top: 538px;
+  background-size: 1366px auto, 1018px auto, 1366px auto;
+  background-image: url("../img/bg_first_girl_desktop@x1.png"), url("../img/bg_israel_desktop@x1.png"), url("../img/bg_first_desktop@x1.png");
+  background-position: center top, center top 160px, center top;
   background-repeat: no-repeat;
 
   @media (min-resolution: 144dpi),
     (min-resolution: 1.5dppx) {
-    background-image: url("../img/bg_girl_desktop@x2.png");
+    background-image:  url("../img/bg_first_girl_desktop@x2.png"), url("../img/bg_israel_desktop@x2.png"), url("../img/bg_first_desktop@x2.png");
   }
 
-  @media (max-width: $tablet - 1px) {
-    background-image: url("../img/bg_girl_mobile@x1.png");
-
-    @media (min-resolution: 144dpi),
-      (min-resolution: 1.5dppx) {
-      background-image: url("../img/bg_girl_mobile@x2.png");
-    }
+  @media (min-width: $tablet) and (max-width: $desktop - 1px) {
+    padding-top: 435px;
+    background-size: 1366px auto, 100% auto, 1366px auto;
+    background-position: center top, center top 178px, center top;
   }
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    min-height: 632px;
-    padding-top: 20px;
-    background-size: 100%;
+    padding-top: 335px;
+    background-size: 912px auto, 347px auto, 912px auto;
+    background-position: center top 32px, center top 168px, center top 32px;
   }
 }
 
 .first-screen__promo {
   width: 343px;
+  margin: 0;
   margin-bottom: 32px;
   font-family: $font-family--primary;
   font-weight: bold;
@@ -43,7 +41,7 @@
   color: #ffffff;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 
-  @media (max-width: $tablet - 1px) {
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
     width: 288px;
     font-size: 20px;
     line-height: 24px;
@@ -51,7 +49,11 @@
 }
 
 .first-screen__help-scroll {
-  margin-bottom: 140px;
+  margin-bottom: 130px;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    margin-bottom: 72px;
+  }
 }
 
 .first-screen__help-scroll-img {
