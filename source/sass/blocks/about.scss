@@ -4,16 +4,49 @@
   background-image: url("../img/bg_about_desktop@x1.png");
   background-position: center bottom;
   background-repeat: no-repeat;
+
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    background-image:  url("../img/bg_about_desktop@x2.png");
+  }
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    background-size: 131% auto;
+    background-position: center top 195px;
+  }
 }
 
 .about__wrapper {
   max-width: 870px;
   margin: 0 auto;
+
+  p {
+    max-width: 752px;
+    margin: 0 auto;
+    margin-bottom: 48px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-family: $font-family--primary;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 170%;
+    text-align: center;
+    color: $color-black;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      text-align: left;
+      font-size: 16px;
+      line-height: 160%;
+    }
+  }
 }
 
 .about__title {
   margin: 0;
   margin-bottom: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
   font-family: $font-family--headers;
   font-weight: bold;
   font-size: 40px;
@@ -22,30 +55,38 @@
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: $color-blue;
-}
 
-.about__text {
-  max-width: 720px;
-  margin: 0 auto;
-  margin-bottom: 48px;
-  font-family: $font-family--primary;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 170%;
-  text-align: center;
-  color: $color-black;
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    font-size: 32px;
+    line-height: 39px;
+  }
 }
 
 .about__video {
   position: relative;
+  background-size: auto 100%;
+  background-image: url("../img/photo_about_desktop@x1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    background-image:  url("../img/photo_about_desktop@x2.png");
+  }
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    background-size: 150% auto;
+  }
 }
 
 .about__video-content {
-  background-size: auto;
-  background-image: url("/img/photo_about_desktop@x1.png");
-  background-position: center;
-  background-repeat: no-repeat;
+  display: block;
+  width: 100%;
+  height: 460px;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    height: 224px;
+  }
 }
 
 .about__video-controls {
@@ -61,6 +102,11 @@
   height: 96px;
   background-color: rgba(255, 255, 255, 0.32);
   border-radius: 50%;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .about__video-button {
@@ -75,12 +121,21 @@
   border-radius: 50%;
   cursor: pointer;
 
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    width: 53px;
+    height: 53px;
+  }
+
   svg {
     display: block;
     width: 15px;
     height: 19px;
     margin-left: 27px;
     fill: $color-blue;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      margin-left: 22px;
+    }
   }
 
   &:hover {
