@@ -63,7 +63,7 @@
     font-weight: bold;
     font-size: 28px;
     line-height: 170%;
-    background: linear-gradient(108.42deg, #FFC341 20.46%, #FFD701 65.31%);
+    background: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #ffd701;
@@ -86,7 +86,6 @@
 }
 
 .accordion__item--visible {
-
   .accordion__item-header::after {
     background-image: url("../img/icon_up.svg");
   }

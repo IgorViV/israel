@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var buttonOrderCall = document.querySelector('.page-header__btn');
 var pageModalOverlay = document.querySelector('.modal-overlay');
@@ -11,38 +11,38 @@ var modalAcceptedBtnClose = pageModalOverlay.querySelector('.modal__btn-close--a
 var ESC_KEYCODE = 27;
 var ENTER_KEYCODE = 13;
 
-function onModalCallOpen () {
+function onModalCallOpen() {
   modalCall.classList.remove('hidden');
   pageModalOverlay.classList.remove('hidden');
 }
 
-function onModalAcceptedOpen () {
-  modalAccepted.classList.remove('hidden');
-  pageModalOverlay.classList.remove('hidden');
-}
+// function onModalAcceptedOpen() {
+//   modalAccepted.classList.remove('hidden');
+//   pageModalOverlay.classList.remove('hidden');
+// }
 
-function onModalCallClose () {
+function onModalCallClose() {
   modalCall.classList.add('hidden');
 }
 
-function onModalAcceptedClose () {
+function onModalAcceptedClose() {
   modalAccepted.classList.add('hidden');
   pageModalOverlay.classList.add('hidden');
 }
 
-function onAllModalClose () {
+function onAllModalClose() {
   modalCall.classList.add('hidden');
   modalAccepted.classList.add('hidden');
   pageModalOverlay.classList.add('hidden');
 }
 
-function isEscEvent (evt, action) {
+function isEscEvent(evt, action) {
   if (evt.keyCode === ESC_KEYCODE) {
     action();
   }
 }
 
-function isEnterEvent (evt, action) {
+function isEnterEvent(evt, action) {
   if (evt.keyCode === ENTER_KEYCODE) {
     action();
   }
@@ -72,7 +72,7 @@ modalCallSubmit.addEventListener('click', function (evt) {
 
 modalCallSubmit.addEventListener('keydown', function (evt) {
 
-  isEnterEvent (evt, onModalCallClose);
+  isEnterEvent(evt, onModalCallClose);
 
   // открыть модальное окно Заявка принята
   modalAccepted.classList.remove('hidden');
@@ -83,10 +83,10 @@ modalAcceptedBtn.addEventListener('click', function () {
 });
 
 modalAcceptedBtn.addEventListener('keydown', function (evt) {
-  isEnterEvent (evt, onModalAcceptedClose);
+  isEnterEvent(evt, onModalAcceptedClose);
 });
 
 document.addEventListener('keydown', function (evt) {
 
-  isEscEvent (evt, onAllModalClose);
+  isEscEvent(evt, onAllModalClose);
 });

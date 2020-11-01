@@ -1,12 +1,12 @@
 .feedback {
   background-size: cover, 535px auto;
-  background-image:  url("../img/bg_reviews_watercolor_desktop@x1.png"), url("../img/bg_reviews_sketch.png");
+  background-image: url("../img/bg_reviews_watercolor_desktop@x1.png"), url("../img/bg_reviews_sketch.png");
   background-position: center, right -12px top 56px;
   background-repeat: no-repeat;
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
     background-size: cover, auto;
-    background-image:  url("../img/bg_reviews_watercolor_mobile@x1.png"), url("../img/bg_reviews_sketch_mobile@x1.png");
+    background-image: url("../img/bg_reviews_watercolor_mobile@x1.png"), url("../img/bg_reviews_sketch_mobile@x1.png");
     background-position: center bottom, left 32px bottom 167px;
   }
 }

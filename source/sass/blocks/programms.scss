@@ -2,153 +2,377 @@
   padding-top: 104px;
   background-size: auto;
   background-image: url("../img/bg_programms_desktop@x1.png");
-  background-position: right top;
+  background-position: right top 56px;
   background-repeat: no-repeat;
+
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    background-image: url("../img/bg_programms_desktop@x2.png");
+  }
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    padding-top: 80px;
+    background-image: url("../img/bg_programms_mobile@x2.png");
+    background-position: right top 118px;
+
+    @media (min-resolution: 144dpi),
+      (min-resolution: 1.5dppx) {
+      background-image: url("../img/bg_programms_mobile@x2.png");
+    }
+  }
 }
 
 .programms__wrapper {
   max-width: 945px;
-  margin: 0 auto;
+
+  @include push-auto;
   padding-right: 93px;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    padding-right: 0;
+  }
 }
 
 .programms__title {
   margin: 0;
   margin-bottom: 83px;
-  font-family: $font-family--headers;
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 49px;
+
+  @include font-headers($lh: 49px, $colorfont: $color-blue);
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  color: $color-blue;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    margin-bottom: 16px;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+  }
 }
 
-.programms__list {
-  position: relative;
-  width: 100%;
-  min-height: 320px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.programms__content {
+  @include flexible($align: flex-start);
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
 }
 
-.programms__item {
-  width: 228px;
-  margin: 0;
-  padding: 0;
+.programms__selectors {
+  @include flexible($direction: column);
+  margin-right: 64px;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    margin-right: 0;
+    margin-bottom: 32px;
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-start;
+    min-height: 48px;
+  }
 
   label {
     position: relative;
     display: block;
-    padding-left: 72px;
-    font-family: $font-family--primary;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 18px;
-    color: rgba(72, 72, 72, 0.87);
+    width: 228px;
 
-    .programms__icon-wrapper {
-      position: absolute;
-      top: 50%;
-      left: 20px;
-      transform: translateY(-50%);
-      z-index: 10;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 36px;
-      height: 36px;
+    @include font-primary($lh: 18px, $colorfont: rgba(72, 72, 72, 0.87));
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      width: auto;
     }
 
     span {
+      position: relative;
       display: block;
+      padding-left: 72px;
+      padding-right: 41px;
       padding-top: 25px;
       padding-bottom: 24px;
+
+      @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+        padding-left: 52px;
+        padding-right: 12px;
+        padding-top: 15px;
+        padding-bottom: 14px;
+      }
+
+      &::before {
+        @include pseudo;
+        top: 50%;
+        left: 38px;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 36px;
+        height: 36px;
+        background-size: auto;
+        background-image: url("../img/icon_david_black.png");
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+          left: 28px;
+        }
+      }
     }
 
     &:hover {
       color: #ffd701;
       cursor: pointer;
+
+      span {
+        &::before {
+          background-image: url("../img/icon_david_yellow.png");
+        }
+      }
     }
   }
 
-  input:checked + label {
-    position: relative;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    text-transform: uppercase;
-    font-variant: small-caps;
-    color: #ffffff;
-    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12);
-    background: $color-gradient;
-
-    svg {
-      fill: red;
+  label[for="general"] {
+    span {
+      min-width: 119px;
     }
-
-    &::before {
-      position: absolute;
-      content: "";
-      top: 0;
-      right: 0;
-      z-index: 10;
-      width: 0;
-      height: 0;
-      border-top: 34px solid #ffffff;
-      border-left: 34px solid transparent;
-    }
-
-    &::after {
-      position: absolute;
-      content: "";
-      bottom: 0;
-      right: 0;
-      z-index: 10;
-      width: 0;
-      height: 0;
-      border-bottom: 34px solid #ffffff;
-      border-left: 34px solid transparent;
-    }
-
-
   }
 
-  input:checked ~ .programms__description {
-    display: block;
+  label[for="academic"] {
+    span {
+      min-width: 190px;
+
+      &::before {
+        background-image: url("../img/icon_cap_black.png");
+      }
+    }
+
+    &:hover {
+      span {
+        &::before {
+          background-image: url("../img/icon_cap_yellow.png");
+        }
+      }
+    }
+  }
+
+  label[for="internships"] {
+    span {
+      min-width: 165px;
+
+      &::before {
+        background-image: url("../img/icon_case_black.png");
+      }
+    }
+
+    &:hover {
+      span {
+        &::before {
+          background-image: url("../img/icon_case_yellow.png");
+        }
+      }
+    }
+  }
+
+  label[for="volunteerism"] {
+    span {
+      min-width: 182px;
+
+      &::before {
+        background-image: url("../img/icon_hand_black.png");
+      }
+    }
+
+    &:hover {
+      span {
+        &::before {
+          background-image: url("../img/icon_hand_yellow.png");
+        }
+      }
+    }
+  }
+
+  label[for="religious"] {
+    span {
+      min-width: 174px;
+
+      &::before {
+        background-image: url("../img/icon_candles_black.png");
+      }
+    }
+
+    &:hover {
+      span {
+        &::before {
+          background-image: url("../img/icon_candles_yellow.png");
+        }
+      }
+    }
   }
 }
 
-.programms__description {
-  position: absolute;
-  top: 15px;
-  right: 0;
-  z-index: 10;
+input[id="general"]:checked ~ .programms__selectors label[for="general"],
+input[id="academic"]:checked ~ .programms__selectors label[for="academic"],
+input[id="internships"]:checked ~ .programms__selectors label[for="internships"],
+input[id="volunteerism"]:checked ~ .programms__selectors label[for="volunteerism"],
+input[id="religious"]:checked ~ .programms__selectors label[for="religious"] {
+  position: relative;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  background: $color-gradient;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    border-radius: 80px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: 0;
+    height: 0;
+    border-top: 34px solid #ffffff;
+    border-left: 34px solid transparent;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      display: none;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    width: 0;
+    height: 0;
+    border-bottom: 34px solid #ffffff;
+    border-left: 34px solid transparent;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      display: none;
+    }
+  }
+
+  span {
+    &::before {
+      background-image: url("../img/icon_david_white.png");
+    }
+  }
+}
+
+input[id="academic"]:checked ~ .programms__selectors label[for="academic"] {
+  span {
+    &::before {
+      background-image: url("../img/icon_cap_white.png");
+    }
+  }
+}
+
+input[id="internships"]:checked ~ .programms__selectors label[for="internships"] {
+  span {
+    &::before {
+      background-image: url("../img/icon_case_white.png");
+    }
+  }
+}
+
+input[id="volunteerism"]:checked ~ .programms__selectors label[for="volunteerism"] {
+  span {
+    &::before {
+      background-image: url("../img/icon_hand_white.png");
+    }
+  }
+}
+
+input[id="religious"]:checked ~ .programms__selectors label[for="religious"] {
+  span {
+    &::before {
+      background-image: url("../img/icon_candles_white.png");
+    }
+  }
+}
+
+input[id="academic"]:checked ~ .programms__selectors {
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    align-self: flex-start;
+  }
+}
+
+input[id="internships"]:checked ~ .programms__selectors {
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    align-self: center;
+  }
+}
+
+input[id="volunteerism"]:checked ~ .programms__selectors {
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    align-self: flex-end;
+  }
+}
+
+input[id="religious"]:checked ~ .programms__selectors {
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    align-self: flex-end;
+  }
+}
+
+.programms__descriptions {
+  max-width: 560px;
+
+  @include reset-list;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    @include push-auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.programms__tab {
   display: none;
-  width: 560px;
+
+  @include reset;
 
   h3 {
-    margin: 0;
+    @include reset;
     margin-bottom: 24px;
-    font-family: $font-family--headers;
-    font-weight: bold;
-    font-size: 28px;
-    line-height: 34px;
+
+    @include font-headers($size: 28px, $lh: 34px, $colorfont: $color-blue);
     letter-spacing: -0.02em;
-    color: $color-blue;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      margin-bottom: 16px;
+      font-size: 24px;
+      line-height: 29px;
+    }
   }
 
   p {
-    margin: 0;
-    font-family: $font-family--primary;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 170%;
-    color: rgba(72, 72, 72, 0.87);
+    @include reset;
+    @include font-primary($lh: 26px, $colorfont: rgba(72, 72, 72, 0.87));
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
 
     &:first-of-type {
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
   }
+}
+
+input[id="general"]:checked ~ .programms__descriptions .programms__tab[id="tab-general"],
+input[id="academic"]:checked ~ .programms__descriptions .programms__tab[id="tab-academic"],
+input[id="internships"]:checked ~ .programms__descriptions .programms__tab[id="tab-internships"],
+input[id="volunteerism"]:checked ~ .programms__descriptions .programms__tab[id="tab-volunteerism"],
+input[id="religious"]:checked ~ .programms__descriptions .programms__tab[id="tab-religious"] {
+  display: block;
 }

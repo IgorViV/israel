@@ -1,0 +1,55 @@
+@mixin push-auto {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+@mixin reset {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin pseudo($content: "", $pos: absolute, $display: block) {
+  content: $content;
+  position: $pos;
+  display: $display;
+}
+
+@mixin font-primary($weight: 400, $size: 15px, $lh: 140%, $colorfont: $color-black) {
+  font-family: $font-family--primary;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $lh;
+  color: $colorfont;
+}
+
+@mixin font-headers($weight: 700, $size: 40px, $lh: 150%, $colorfont: $color-black) {
+  font-family: $font-family--headers;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $lh;
+  color: $colorfont;
+}
+
+@mixin font-headers-big($weight: 900, $size: 72px, $lh: 170%, $colorfont: $color-black) {
+  font-family: $font-family--headers-big;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $lh;
+  color: $colorfont;
+}
+
+@mixin flexible ($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}

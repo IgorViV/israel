@@ -13,7 +13,7 @@
 
   @media (min-resolution: 144dpi),
     (min-resolution: 1.5dppx) {
-    background-image:  url("../img/bg_first_girl_desktop@x2.png"), url("../img/bg_israel_desktop@x2.png"), url("../img/bg_first_desktop@x2.png");
+    background-image: url("../img/bg_first_girl_desktop@x2.png"), url("../img/bg_israel_desktop@x2.png"), url("../img/bg_first_desktop@x2.png");
   }
 
   @media (min-width: $tablet) and (max-width: $desktop - 1px) {
