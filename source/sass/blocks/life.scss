@@ -63,6 +63,7 @@
   margin: 0 auto;
   padding-left: 494px;
   list-style: none;
+  transform: translateX(0%);
 
   @media (max-width: 1154px) {
     justify-content: space-around;
@@ -266,22 +267,9 @@
     bottom: 0;
     transform: translateX(-50%);
     z-index: 15;
-    display: block;
+
+    @include flexible ($justify: space-between, $align: center, $wrap: nowrap);
     width: 64px;
-  }
-
-  ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  li {
-    margin: 0;
-    padding: 0;
   }
 }
 

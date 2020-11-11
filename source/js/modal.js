@@ -16,11 +16,6 @@ function onModalCallOpen() {
   pageModalOverlay.classList.remove('hidden');
 }
 
-// function onModalAcceptedOpen() {
-//   modalAccepted.classList.remove('hidden');
-//   pageModalOverlay.classList.remove('hidden');
-// }
-
 function onModalCallClose() {
   modalCall.classList.add('hidden');
 }
