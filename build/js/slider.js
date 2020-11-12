@@ -2,7 +2,6 @@
 
 var blockLife = document.querySelector('.life');
 var lifeSlider = blockLife.querySelector('.life__slider');
-var sliderItem = lifeSlider.querySelectorAll('.life__slider-item');
 var sliderControls = blockLife.querySelector('.life__slider-controls');
 var sliderBtn = sliderControls.querySelectorAll('.life__btn');
 var currentNumberSlide = 0;
@@ -13,15 +12,15 @@ addBtnActive(sliderBtn[currentNumberSlide]);
 
 transformSlider(currentNumberSlide);
 
-sliderControls.onclick = function(evt) {
+sliderControls.onclick = function (evt) {
   evt.preventDefault();
-
-  var btn = evt.target.closest('button'); 
-
-  if (!btn) return;
-
-  if (!sliderControls.contains(btn)) return; 
-
+  var btn = evt.target.closest('button');
+  if (!btn) {
+    return;
+  }
+  if (!sliderControls.contains(btn)) {
+    return;
+  }
   addBtnActive(btn);
   removeBtnActive(sliderBtn[currentNumberSlide]);
 
@@ -31,8 +30,7 @@ sliderControls.onclick = function(evt) {
 
 };
 
-window.addEventListener('resize', function(){
- 
+window.addEventListener('resize', function () {
   if (document.documentElement.clientWidth >= 767) {
     var numberSlide = 0;
     transformSlider(numberSlide);
@@ -64,6 +62,6 @@ function getCurrentIndexBtn(targetBtn) {
 }
 
 function transformSlider(currentIndex) {
-  var transValue = "transform: translateX(" + currentIndex * (-20) + "%)";
+  var transValue = 'transform: translateX(' + currentIndex * (-20) + '%)';
   lifeSlider.setAttribute('style', transValue);
 }

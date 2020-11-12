@@ -1,8 +1,7 @@
 .accordion {
   max-width: 585px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  
+  @include reset;
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
     margin: 0 auto;
@@ -10,9 +9,9 @@
 }
 
 .accordion__item {
-  margin: 0;
+  
+  @include reset;
   margin-bottom: 24px;
-  padding: 0;
   padding-bottom: 32px;
   border-bottom: 1px solid rgba(72, 72, 72, 0.2);
 
@@ -30,11 +29,8 @@
   display: flex;
   align-items: baseline;
   padding-right: 131px;
-  font-family: $font-family--primary;
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 150%;
-  color: #484848;
+
+  @include font-primary($size: 17px, $lh: 150%, $colorfont: $color-black);
   cursor: pointer;
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
@@ -45,11 +41,11 @@
   }
 
   &::after {
-    content: "";
-    position: absolute;
+
+    @include pseudo();
+    z-index: 5;
     right: 37px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 23px;
     width: 15px;
     height: 8px;
     background-size: auto;
@@ -73,24 +69,22 @@
 .accordion__item-content {
   display: none;
   max-width: 480px;
-  font-family: $font-family--primary;
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 140%;
-  color: rgba(72, 72, 72, 0.74);
+  margin-top: 24px;
 
+  @include reset;
+
+  @include font-primary($colorfont: rgba(72, 72, 72, 0.74));
+  
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
     font-size: 14px;
     line-height: 160%;
   }
 }
 
-.accordion__item--visible {
-  .accordion__item-header::after {
-    background-image: url("../img/icon_up.svg");
-  }
+.accordion__item-header--active::after {
+  background-image: url("../img/icon_up.svg");
+}
 
-  .accordion__item-content {
-    display: block;
-  }
+.accordion__item-header--active ~ .accordion__item-content {
+  display: block;
 }
