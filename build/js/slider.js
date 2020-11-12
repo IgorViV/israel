@@ -27,7 +27,6 @@ sliderControls.onclick = function (evt) {
   currentNumberSlide = getCurrentIndexBtn(btn);
 
   transformSlider(currentNumberSlide);
-
 };
 
 window.addEventListener('resize', function () {
