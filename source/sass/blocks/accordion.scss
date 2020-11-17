@@ -1,6 +1,6 @@
 .accordion {
   max-width: 585px;
-  
+
   @include reset;
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
@@ -9,7 +9,6 @@
 }
 
 .accordion__item {
-  
   @include reset;
   margin-bottom: 24px;
   padding-bottom: 32px;
@@ -41,7 +40,6 @@
   }
 
   &::after {
-
     @include pseudo();
     z-index: 5;
     right: 37px;
@@ -72,9 +70,8 @@
   margin-top: 24px;
 
   @include reset;
-
   @include font-primary($colorfont: rgba(72, 72, 72, 0.74));
-  
+
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
     font-size: 14px;
     line-height: 160%;

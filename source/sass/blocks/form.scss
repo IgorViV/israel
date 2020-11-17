@@ -1,5 +1,72 @@
 .form {
-  margin: 0;
+  @include flexible ();
+  @include reset;
+
+  input {
+    display: block;
+    width: 100%;
+    padding-top: 19px;
+    padding-left: 40px;
+    padding-bottom: 20px;
+    padding-right: 40px;
+
+    @include font-primary($weight: 500, $size: 17px, $lh: 20px, $colorfont: rgba(72, 72, 72, 0.5));
+    font-variant: small-caps;
+    border: 2px solid #e3e3e3;
+    border-radius: 80px;
+    outline: none;
+
+    &:hover {
+      border-color: #ffc92c;
+    }
+
+    &:focus {
+      border-color: #ffc92c;
+    }
+
+    &::placeholder {
+      font-family: inherit;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 20px;
+      font-variant: small-caps;
+      color: rgba(72, 72, 72, 0.5);
+    }
+  }
+
+  input[type="tel"] {
+    &:focus {
+      background-size: auto;
+      background-position: left 60px bottom 17px;
+      background-image: url("../img/bg-tel-focus.png");
+      background-repeat: no-repeat;
+    }
+  }
+
+  button {
+    padding-top: 21px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 22px;
+
+    @include font-primary($weight: 500, $size: 17px, $lh: 20px, $colorfont: #ffffff);
+    text-align: center;
+    font-variant: small-caps;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    background: $color-gradient;
+    border: none;
+    border-radius: 80px;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+      background: #ffc341;
+    }
+
+    &:active {
+      background: radial-gradient(150% 119.49% at 50% 50.85%, rgba(0, 0, 0, 0) 30.67%, rgba(3, 3, 3, 0.24) 100%), #ffc341;
+    }
+  }
 }
 
 .form--want-to-go {
@@ -7,31 +74,54 @@
   width: 477px;
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
   }
+
+  input {
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      margin-bottom: 8px;
+    }
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      position: static;
+      transform: translateY(0);
+      padding-left: 64px;
+      padding-right: 64px;
+    }
+  }
 }
 
 .form--contacts {
-  display: flex;
   align-items: flex-start;
 
   @media (max-width: 1066px) {
-    display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  button {
+    width: 216px;
+    margin-right: 0;
+
+    @media (max-width: 1066px) {
+      width: 264px;
+      margin-top: 24px;
+    }
   }
 }
 
 .form__group {
-  width: 100%;
-  margin: 0;
-}
-
-.form__group--contacts {
   width: 250px;
   margin-right: 24px;
 
@@ -47,111 +137,121 @@
   }
 }
 
-.form__input {
-  display: block;
-  padding-top: 19px;
-  padding-left: 40px;
-  padding-bottom: 20px;
-  padding-right: 40px;
-  font-family: $font-family--primary;
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 20px;
-  font-variant: small-caps;
-  color: rgba(72, 72, 72, 0.5);
-  border: 2px solid #e3e3e3;
-  border-radius: 80px;
-  outline: none;
+.form--modal {
+  flex-direction: column;
 
-  &:hover {
-    border-color: #ffc92c;
-  }
+  input {
+    display: block;
+    width: 360px;
+    padding: 19px 40px 20px 40px;
 
-  &:focus {
-    border-color: #ffc92c;
-  }
-
-  &::placeholder {
-    font-family: inherit;
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 20px;
+    @include font-primary($weight: 500, $size: 17px, $lh: 20px, $colorfont: rgba(72, 72, 72, 0.5));
     font-variant: small-caps;
-    color: rgba(72, 72, 72, 0.5);
-  }
-}
+    border: 2px solid #e3e3e3;
+    border-radius: 80px;
+    outline: none;
 
-.form__input--tel {
-  &:focus {
-    background-size: auto;
-    background-position: left 60px bottom 17px;
-    background-image: url("../img/bg-tel-focus.png");
-    background-repeat: no-repeat;
-  }
-}
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      width: 288px;
+    }
 
-.form__input--want-to-go {
-  width: 100%;
+    &:hover {
+      border-color: #ffc92c;
+    }
 
-  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    margin-bottom: 8px;
-    width: 100%;
-  }
-}
+    &:focus {
+      border-color: #ffc92c;
+    }
 
-.form__input--contacts {
-  width: 100%;
-}
-
-.form__btn {
-  padding-top: 21px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 22px;
-  font-family: $font-family--primary;
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 20px;
-  text-align: center;
-  font-variant: small-caps;
-  color: #ffffff;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
-  background: $color-gradient;
-  border: none;
-  border-radius: 80px;
-  cursor: pointer;
-  outline: none;
-
-  &:hover {
-    background: #ffc341;
+    &::placeholder {
+      font-family: inherit;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 20px;
+      font-variant: small-caps;
+      color: rgba(72, 72, 72, 0.5);
+    }
   }
 
-  &:active {
-    background: radial-gradient(150% 119.49% at 50% 50.85%, rgba(0, 0, 0, 0) 30.67%, rgba(3, 3, 3, 0.24) 100%), #ffc341;
-  }
-}
-
-.form__btn--want-to-go {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  z-index: 10;
-
-  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    position: static;
-    transform: translateY(0);
-    padding-left: 64px;
-    padding-right: 64px;
-  }
-}
-
-.form__btn--contacts {
-  width: 216px;
-  margin-right: 0;
-
-  @media (max-width: 1066px) {
+  button {
+    display: block;
     width: 264px;
-    margin-top: 24px;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    padding-top: 19px;
+    padding-bottom: 20px;
+
+    @include font-primary($weight: 500, $size: 17px, $lh: 20px, $colorfont: #ffffff);
+    text-align: center;
+    font-variant: small-caps;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    background: $color-gradient;
+    border: none;
+    border-radius: 80px;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+      background: #ffc341;
+    }
+
+    &:active {
+      background: radial-gradient(150% 119.49% at 50% 50.85%, rgba(0, 0, 0, 0) 30.67%, rgba(3, 3, 3, 0.24) 100%), #ffc341;
+    }
+  }
+}
+
+.form-group--modal {
+  margin-bottom: 24px;
+
+  &:first-of-type {
+    margin-bottom: 8px;
+  }
+
+  &:last-of-type {
+    width: 264px;
+    margin-left: 64px;
+    margin-bottom: 0;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      margin: 0 auto;
+    }
+
+    input {
+      display: none;
+    }
+
+    label {
+      position: relative;
+      display: block;
+      padding-left: 24px;
+      font-size: 13px;
+      line-height: 19px;
+      color: rgba(72, 72, 72, 0.74);
+
+      &::before {
+        @include pseudo();
+        top: 0;
+        left: 0;
+        z-index: 102;
+        width: 16px;
+        height: 16px;
+        border: 2px solid  #ffc92c;
+        border-radius: 2px;
+      }
+    }
+
+    input:checked ~ label::after {
+      @include pseudo();
+      top: 1px;
+      left: 3px;
+      z-index: 103;
+      width: 16px;
+      height: 12px;
+      background-size: 100%;
+      background-image: url("../img/icon-ok.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 }

@@ -16,7 +16,9 @@
   <div class="page-wrapper">
     <header class="page-header">
       <ul class="page-header__list">
-        <li class="page-header__item page-header__item--phone">+ (972) 2 – 621 – 6581</li>
+        <li class="page-header__item page-header__item--phone">
+          <a href="#" title="Наш телефон"> + (972) 2 – 621 – 6581</a>
+        </li>
         <li class="page-header__item page-header__item--logo">
           <picture>
             <source media="(max-width: 767px)" srcset="img/logo_mobile@x1.webp 1x, img/logo_mobile@x2.webp 2x" type="image/webp">
@@ -151,26 +153,22 @@
           </div>
         </div>
       </section>
-      <section class="want-to-go hidden-temp">
+      <section class="want-to-go">
         <div class="want-to-go__wrapper">
           <h2 class="want-to-go__title">Хочу поехать!</h2>
           <p class="want-to-go__text">
             Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на все вопросы!
           </p>
           <form class="want-to-go__form form form--want-to-go" action="#" method="GET">
-            <div class="form__group form__group--want-to-go">
-              <label class="form__label" for="user-phone">
-                <span class="visually-hidden">
-                  Номер телефона
-                </span>
-              </label>
-              <input class="form__input form__input--tel form__input--want-to-go" type="tel" name="phone" id="user-phone" placeholder="телефон">
-            </div>
-            <button class="form__btn form__btn--want-to-go" type="submit">перезвоните мне</button>
+            <label class="visually-hidden" for="user-phone">
+              Номер телефона
+            </label>
+            <input type="tel" name="phone" id="user-phone" placeholder="телефон" required>
+            <button type="submit">перезвоните мне</button>
           </form>
         </div>
       </section>
-      <section class="how-to-go hidden-temp">
+      <section class="how-to-go">
         <div class="how-to-go__wrapper">
           <h2 class="how-to-go__title">Как поехать</h2>
           <p class="how-to-go__text">
@@ -199,7 +197,7 @@
           </p>
         </div>
       </section>
-      <section class="life hidden-temp">
+      <section class="life">
         <h2 class="life__title">Жизнь в израиле</h2>
         <p class="life__text">
           Помимо учёбы, в рамках программе у вас будет возможность путешествовать по стране и познакомиться с богатой культурно-исторической жизнью Израиля и его жителей.
@@ -271,13 +269,13 @@
           <button class="life__btn" type="button" title="Пятый слайд" data-number-of="4"></button>
         </div>
       </section>
-      <section class="blogs hidden-temp">
+      <section class="blogs">
         <div class="blogs__wrapper">
           <h2 class="blogs__title">#masaisrael</h2>
           <p class="blogs__text">
             Познакомьтесь с программой от&nbsp;первого лица! Многие участники ведут блоги и фотодневникио жизни, учёбе и путешествиях в Израиле.
           </p>
-          <a class="button blogs__btn" href="#">
+          <a href="#" title="Перейти на страницу с фотографиями">
             <svg width="20" height="20" viewBox="0 0 20 20">
               <path d="M10 6.3999C8.01488 6.3999 6.40002 8.01476 6.40002 9.9999C6.40002 11.985 8.01488 13.5999 10 13.5999C11.9852 13.5999 13.6 11.985 13.6 9.9999C13.6 8.01476 11.9852 6.3999 10 6.3999Z"/>
               <path fill-rule="evenodd" clip-rule="evenodd" d="M0.400024 15.6106V4.3892C0.400024 2.18596 2.18608 0.399902 4.38932 0.399902H15.6107C17.814 0.399902 19.6 2.18596 19.6 4.3892V15.6106C19.6 17.8138 17.814 19.5999 15.6107 19.5999H4.38932C2.18608 19.5999 0.400024 17.8138 0.400024 15.6106ZM4.55995 7.96611C2.926 12.7018 7.29815 17.0739 12.0338 15.44C13.63 14.8894 14.8896 13.6299 15.4401 12.0338C17.074 7.29803 12.7019 2.92588 7.96612 4.55982C6.37002 5.11037 5.11049 6.37002 4.55995 7.96611ZM16 4.59993C16.6628 4.59993 17.2 4.06268 17.2 3.39993C17.2 2.73719 16.6628 2.19993 16 2.19993C15.3373 2.19993 14.8 2.73719 14.8 3.39993C14.8 4.06268 15.3373 4.59993 16 4.59993Z"/>
@@ -288,7 +286,7 @@
           </a>
         </div>
       </section>
-      <section class="questions hidden-temp">
+      <section class="questions">
         <div class="questions__wrapper">
           <h2 class="questions__title">Частые вопросы</h2>
           <dl class="questions__accordion accordion">
@@ -309,7 +307,7 @@
               </dd>
             </div>
             <div class="accordion__item">
-              <dt class="accordion__item-header accordion__item-header--active">
+              <dt class="accordion__item-header">
                 <span>3</span> Как определяется стоимость программы?
               </dt>
               <dd class="accordion__item-content">
@@ -343,7 +341,7 @@
           </dl>
         </div>
       </section>
-      <section class="feedback hidden-temp">
+      <section class="feedback">
         <div class="feedback__wrapper">
           <h2 class="feedback__title">Отзывы</h2>
           <div class="feedback__slider">
@@ -387,7 +385,7 @@
                   </ul>
                 </div>
               </li>
-              <li class="feedback__slider-item feedback__slider-item--hidden">
+              <li class="feedback__slider-item">
                 <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" width="364" height="480" alt="Фото Ольги">
                 <div class="feedback__text-wrapper">
                   <h3 class="feedback__author">Ольга Михайлова</h3>
@@ -421,7 +419,7 @@
                   </ul>
                 </div>
               </li>
-              <li class="feedback__slider-item feedback__slider-item--hidden">
+              <li class="feedback__slider-item">
                 <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" width="364" height="480" alt="Фото Ольги">
                 <div class="feedback__text-wrapper">
                   <h3 class="feedback__author">Ольга Михайлова</h3>
@@ -455,7 +453,7 @@
                   </ul>
                 </div>
               </li>
-              <li class="feedback__slider-item feedback__slider-item--hidden">
+              <li class="feedback__slider-item">
                 <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" width="364" height="480" alt="Фото Ольги">
                 <div class="feedback__text-wrapper">
                   <h3 class="feedback__author">Ольга Михайлова</h3>
@@ -489,7 +487,7 @@
                   </ul>
                 </div>
               </li>
-              <li class="feedback__slider-item feedback__slider-item--hidden">
+              <li class="feedback__slider-item">
                 <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" width="364" height="480" alt="Фото Ольги">
                 <div class="feedback__text-wrapper">
                   <h3 class="feedback__author">Ольга Михайлова</h3>
@@ -523,7 +521,7 @@
                   </ul>
                 </div>
               </li>
-              <li class="feedback__slider-item feedback__slider-item--hidden">
+              <li class="feedback__slider-item">
                 <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" width="364" height="480" alt="Фото Ольги">
                 <div class="feedback__text-wrapper">
                   <h3 class="feedback__author">Ольга Михайлова</h3>
@@ -566,12 +564,12 @@
               <div class="feedback__slider-controls">
                 <button class="feedback__btn feedback__btn--prev" type="button" name="btn-prev">
                   <svg width="11" height="18" viewBox="0 0 11 18" fill="none">
-                    <path opacity="0.2" d="M10 1.5L2 9L10 16.5" stroke="#484848" stroke-width="2"/>
+                    <path d="M10 1.5L2 9L10 16.5" stroke="#484848" stroke-width="2"/>
                   </svg>
                 </button>
-                <button class="feedback__btn feedback__btn--next" type="button" name="btn-next">
+                <button class="feedback__btn feedback__btn--next feedback__btn--active" type="button" name="btn-next">
                   <svg width="11" height="18" viewBox="0 0 11 18" fill="none">
-                    <path opacity="0.2" d="M1 16.5L9 9L0.999999 1.5" stroke="#484848" stroke-width="2"/>
+                    <path d="M1 16.5L9 9L0.999999 1.5" stroke="#484848" stroke-width="2"/>
                   </svg>
                 </button>
               </div>
@@ -579,7 +577,7 @@
           </div>
         </div>
       </section>
-      <section class="contacts hidden-temp">
+      <section class="contacts">
         <div class="contacts__wrapper">
           <div class="contacts__text-content">
             <h2 class="contacts__title">Узнать подробности</h2>
@@ -643,19 +641,19 @@
               </p>
             </div>
             <form class="contacts__form form form--contacts" action="#" method="GET">
-              <p class="form__group form__group--contacts">
-                <label class="form__label" for="user-name">
-                  <span class="visually-hidden">Имя</span>
+              <div class="form__group">
+                <label class="visually-hidden" for="contacts-name">
+                  Имя
                 </label>
-                <input class="form__input form__input--name form__input--contacts" id="user-name" type="text" name="name" placeholder="имя" required="">
-              </p>
-              <p class="form__group form__group--contacts">
-                <label class="form__label" for="phone">
-                  <span class="visually-hidden">Телефон</span>
+                <input id="contacts-name" type="text" name="name" placeholder="имя" required>
+              </div>
+              <div class="form__group">
+                <label class="visually-hidden" for="contacts-phone">
+                  Телефон
                 </label>
-                <input class="form__input form__input--tel form__input--contacts" id="phone" type="tel" name="phone" placeholder="телефон" required="">
-              </p>
-              <button class="form__btn form__btn--contacts" type="submit">перезвоните мне</button>
+                <input id="contacts-phone" type="tel" name="phone" placeholder="телефон" required>
+              </div>
+              <button type="submit">перезвоните мне</button>
             </form>
           </div>
         </div>
@@ -706,26 +704,26 @@
       <div class="modal__content-wrapper">
         <h3 class="modal__title">Заказать звонок</h3>
         <p class="modal__text">Оставьте ваши контактные данные, мы&nbsp;свяжемся с&nbsp;вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
-        <form class="modal__form form" action="#" method="GET">
-          <p class="modal__form-group modal__form-group--name">
-            <label class="modal__form-label" for="name">
-              <span class="visually-hidden">Имя</span>
+        <form class="modal__form form form--modal" action="#" method="GET">
+          <div class="form-group form-group--modal">
+            <label class="visually-hidden" for="modal-name">
+              Имя
             </label>
-            <input class="modal__form-input" id="name" type="text" name="name" placeholder="имя" required="" autofocus="">
-          </p>
-          <p class="modal__form-group modal__form-group--phone">
-            <label class="modal__form-label" for="phone-user">
-              <span class="visually-hidden">Телефон</span>
+            <input id="modal-name" type="text" name="name" placeholder="имя" autofocus="" required>
+          </div>
+          <div class="form-group form-group--modal">
+            <label class="visually-hidden" for="modal-phone">
+              Телефон
             </label>
-            <input class="modal__form-input" id="phone-user" type="tel" name="phone" placeholder="телефон" required="">
-          </p>
-          <button class="modal__btn modal__btn--submit" type="submit">перезвоните мне</button>
-          <p class="modal__form-group modal__form-group--consent">
-            <input class="modal__form-input modal__form-input--consent" type="checkbox" id="consent" name="consent">
-            <label class="modal__form-label modal__form-label--consent" for="consent">
+            <input id="modal-phone" type="tel" name="phone" placeholder="телефон" required>
+          </div>
+          <button type="submit">перезвоните мне</button>
+          <div class="form-group form-group--modal">
+            <input type="checkbox" id="modal-consent" name="consent">
+            <label for="modal-consent">
               Нажимая на кнопку, вы даёте согласие на обработку персональных данных
             </label>
-          </p>
+          </div>
         </form>
       </div>
       <button class="modal__btn-close modal__btn-close--call" type="button" title="Закрыть окно"></button>
@@ -741,7 +739,8 @@
     </div>
   </div>
   <script src="js/modal.js"></script>
-  <script src="js/slider.js"></script>
+  <script src="js/life-slider.js"></script>
   <script src="js/accordion.js"></script>
+  <script src="js/feedback-slider.js"></script>
 </body>
 </html>

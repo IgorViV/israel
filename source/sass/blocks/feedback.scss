@@ -50,6 +50,7 @@
 
 .feedback__slider-list {
   display: flex;
+  min-width: 600vw;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -66,10 +67,6 @@
     flex-direction: column;
     align-items: center;
   }
-}
-
-.feedback__slider-item--hidden {
-  display: none;
 }
 
 .feedback__img-author {
@@ -237,14 +234,22 @@
   background: transparent;
   border: none;
   outline: none;
-  cursor: pointer;
 
   svg {
     width: 11px;
     height: auto;
+    opacity: 0.2;
   }
 }
 
 .feedback__btn--prev {
   margin-right: 20px;
+}
+
+.feedback__btn--active {
+  cursor: pointer;
+
+  svg {
+    opacity: 0.5;
+  }
 }

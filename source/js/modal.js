@@ -58,17 +58,13 @@ modalAcceptedBtnClose.addEventListener('click', function () {
 
 modalCallSubmit.addEventListener('click', function (evt) {
   evt.preventDefault();
-
   onModalCallClose();
-
   // открыть модальное окно Заявка принята
   modalAccepted.classList.remove('hidden');
 });
 
 modalCallSubmit.addEventListener('keydown', function (evt) {
-
   isEnterEvent(evt, onModalCallClose);
-
   // открыть модальное окно Заявка принята
   modalAccepted.classList.remove('hidden');
 });
@@ -81,7 +77,11 @@ modalAcceptedBtn.addEventListener('keydown', function (evt) {
   isEnterEvent(evt, onModalAcceptedClose);
 });
 
-document.addEventListener('keydown', function (evt) {
-
+window.addEventListener('keydown', function (evt) {
   isEscEvent(evt, onAllModalClose);
+});
+
+pageModalOverlay.addEventListener('click', function () {
+  onModalCallClose();
+  pageModalOverlay.classList.add('hidden');
 });
