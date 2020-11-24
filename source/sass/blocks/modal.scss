@@ -24,6 +24,10 @@
   }
 }
 
+.modal--hidden {
+  display: none;
+}
+
 .modal__content-wrapper {
   width: 392px;
   margin: 0 auto;
@@ -125,4 +129,26 @@
 
 .modal__btn--accepted {
   margin-bottom: 0;
+  padding-top: 19px;
+  padding-left: 61px;
+  padding-right: 61px;
+  padding-bottom: 20px;
+
+  @include font-primary($weight: 500, $size: 17px, $lh: 20px, $colorfont: #ffffff);
+  text-align: center;
+  font-variant: small-caps;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  background: $color-gradient;
+  border: none;
+  border-radius: 80px;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background: #ffc341;
+  }
+
+  &:active {
+    background: radial-gradient(150% 119.49% at 50% 50.85%, rgba(0, 0, 0, 0) 30.67%, rgba(3, 3, 3, 0.24) 100%), #ffc341;
+  }
 }

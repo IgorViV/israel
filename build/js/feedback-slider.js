@@ -8,15 +8,15 @@ var feedbackBtnPrev = feedbackSlider.querySelector('.feedback__btn--prev');
 var feedbackBtnNext = feedbackSlider.querySelector('.feedback__btn--next');
 var feedbackSlideNumber = feedbackSlider.querySelector('.feedback__slider-number');
 var feedbackSlideSum = feedbackSlider.querySelector('.feedback__slider-sum');
-var sliderWidth = parseFloat(getComputedStyle(feedbackSliderList).width);   
-var sliderItemWidth = parseFloat(getComputedStyle(feedbackSliderItems[0]).width); 
+var sliderWidth = parseFloat(getComputedStyle(feedbackSliderList).width);
+var sliderItemWidth = parseFloat(getComputedStyle(feedbackSliderItems[0]).width);
 var positionLeftItem = 0;
-var transformValue = 0; 
+var transformValue = 0;
 var stepTransform = sliderItemWidth / sliderWidth * 100;
 var position = {
-      getMin: 0,
-      getMax: feedbackSliderItems.length - 1
-    };
+  getMin: 0,
+  getMax: feedbackSliderItems.length - 1
+};
 
 setSliderNumber(1);
 setSumSlides(feedbackSliderItems.length);
@@ -44,7 +44,7 @@ window.addEventListener('resize', function () {
   }
 });
 
-function transformFeedbackItem (direction) {
+function transformFeedbackItem(direction) {
   if (direction === 'right') {
     if (positionLeftItem >= position.getMax) {
       return;
@@ -58,7 +58,7 @@ function transformFeedbackItem (direction) {
 
     positionLeftItem++;
     transformValue -= stepTransform;
-    setSliderNumber(positionLeftItem + 1)
+    setSliderNumber(positionLeftItem + 1);
   }
   if (direction === 'left') {
     if (positionLeftItem <= position.getMin) {
@@ -72,16 +72,16 @@ function transformFeedbackItem (direction) {
     }
     positionLeftItem--;
     transformValue += stepTransform;
-    setSliderNumber(positionLeftItem + 1)
+    setSliderNumber(positionLeftItem + 1);
   }
-  
+
   feedbackSliderList.style.transform = 'translateX(' + transformValue + '%)';
-};
+}
 
 function setSliderNumber(indexSlide) {
   feedbackSlideNumber.textContent = indexSlide;
-};
+}
 
 function setSumSlides(sumSlides) {
   feedbackSlideSum.textContent = sumSlides;
-}; 
+}
