@@ -17,20 +17,21 @@
     <header class="page-header">
       <ul class="page-header__list">
         <li class="page-header__item page-header__item--phone">
-          <a href="tel:+97226216581" title="Наш телефон"> + (972) 2 – 621 – 6581</a>
+          <a href="tel:+97226216581" aria-label="Наш телефон"> + (972) 2 – 621 – 6581</a>
         </li>
         <li class="page-header__item page-header__item--logo">
-          <picture>
-            <source media="(max-width: 767px)" srcset="img/logo_mobile@x1.webp 1x, img/logo_mobile@x2.webp 2x" type="image/webp">
-            <source srcset="img/logo@x1.webp 1x, img/logo@x2.webp 2x" type="image/webp">
-            <source media="(max-width: 767px)" srcset="img/logo_mobile@x1.png 1x, img/logo_mobile@x2.png 2x">
-            <img src="img/logo@x1.png" srcset="img/logo@x2.png 2x" width="137" height="48" alt="Логотип">
-          </picture>
+          <a href="#" aria-label="Главная Учеба в Израиле">
+            <picture>
+              <source srcset="img/logo@x1.webp 1x, img/logo@x2.webp 2x" type="image/webp">
+              <!-- 1х: 137px; 2x: 274px -->
+              <img src="img/logo@x1.png" srcset="img/logo@x2.png 2x" width="137" height="48" alt="Логотип Учеба в Израиле">
+            </picture>
+          </a>
         </li>
         <li class="page-header__item page-header__item--order-call">
-          <button class="page-header__btn" type="button">
+          <a class="page-header__btn" href="#" aria-label="">
             заказать звонок
-          </button>
+          </a>
         </li>
       </ul>
     </header>
@@ -41,11 +42,9 @@
         <p class=first-screen__promo>
           Учёба, путешествие и карьера для еврейской молодёжи
         </p>
-        <div class="first-screen__help-scroll">
-          <img class="first-screen__help-scroll-img" src="/img/icon_scroll.svg" width="76" height="132" alt="Скролл вниз">
-        </div>
+        <a class="first-screen__scroll" href="#" aria-label="Переход вниз"></a>
       </section>
-      <section class="about">
+      <section class="about hidden">
         <div class="about__wrapper">
           <h2 class="about__title">О программе</h2>
           <p>
@@ -53,9 +52,9 @@
           </p>
           <div class="about__video">
             <video class="about__video-content" width="870" height="460">
-              <source src="img/video.mp4" type="video/mp4">
-              <source src="img/video.ogv" type="video/ogg">
-              <source src="img/video.webm" type="video/webm">
+              <source src="#" type="video/mp4">
+              <source src="#" type="video/ogg">
+              <source src="#" type="video/webm">
             </video>
             <div class="about__video-controls">
               <button class="about__video-button" type="button" aria-label="Play video" title="Воспроизвести">
@@ -67,7 +66,7 @@
           </div>
         </div>
       </section>
-      <section class="programms">
+      <section class="programms hidden">
         <div class="programms__wrapper">
           <h2 class="programms__title">Программы</h2>
           <div class="programms__content">
@@ -153,7 +152,7 @@
           </div>
         </div>
       </section>
-      <section class="want-to-go">
+      <section class="want-to-go hidden">
         <div class="want-to-go__wrapper">
           <h2 class="want-to-go__title">Хочу поехать!</h2>
           <p class="want-to-go__text">
@@ -168,7 +167,7 @@
           </form>
         </div>
       </section>
-      <section class="how-to-go">
+      <section class="how-to-go hidden">
         <div class="how-to-go__wrapper">
           <h2 class="how-to-go__title">Как поехать</h2>
           <p class="how-to-go__text">
@@ -197,7 +196,7 @@
           </p>
         </div>
       </section>
-      <section class="life">
+      <section class="life hidden">
         <h2 class="life__title">Жизнь в израиле</h2>
         <p class="life__text">
           Помимо учёбы, в рамках программе у вас будет возможность путешествовать по стране и познакомиться с богатой культурно-исторической жизнью Израиля и его жителей.
@@ -209,7 +208,7 @@
                 <source media="(max-width: 767px)" srcset="img/img1_live_mobile@x1.webp 1x, img/img1_live_mobile@x2.webp 2x" type="image/webp">
                 <source srcset="img/img1_live_desktop@x1.webp 1x, img/img1_live_desktop@x2.webp 2x" type="image/webp">
                 <source media="(max-width: 767px)" srcset="img/img1_live_mobile@x1.png 1x, img/img1_live_mobile@x2.png 2x">
-                <img src="/img/img1_live_desktop@x1.png" srcset="/img/img1_live_desktop@x2.png 2x" width="482" height="732" alt="Фото мечеть">
+                <img src="/img/img1_live_desktop@x1.png" srcset="/img/img1_live_desktop@x2.png 2x" width="482" height="732" alt="Мечеть в Израиле">
               </picture>
               <span>
                 Экскурсии по Израилю и&nbsp;знакомство с его историей
@@ -220,7 +219,7 @@
                 <source media="(max-width: 767px)" srcset="img/img2_live_mobile@x1.webp 1x, img/img2_live_mobile@x2.webp 2x" type="image/webp">
                 <source srcset="img/img2_live_desktop@x1.webp 1x, img/img2_live_desktop@x2.webp 2x" type="image/webp">
                 <source media="(max-width: 767px)" srcset="img/img2_live_mobile@x1.png 1x, img/img2_live_mobile@x2.png 2x">
-                <img src="/img/img2_live_desktop@x1.png" srcset="/img/img2_live_desktop@x2.png 2x" width="211" height="318" alt="Фото изучение иврита">
+                <img src="/img/img2_live_desktop@x1.png" srcset="/img/img2_live_desktop@x2.png 2x" width="211" height="318" alt="Молодой парень изучает иврит в наушниках">
               </picture>
               <span>
                 Изучение иврита
@@ -231,7 +230,7 @@
                 <source media="(max-width: 767px)" srcset="img/img3_live_mobile@x1.webp 1x, img/img3_live_mobile@x2.webp 2x" type="image/webp">
                 <source srcset="img/img3_live_desktop@x1.webp 1x, img/img3_live_desktop@x2.webp 2x" type="image/webp">
                 <source media="(max-width: 767px)" srcset="img/img3_live_mobile@x1.png 1x, img/img3_live_mobile@x2.png 2x">
-                <img src="/img/img3_live_desktop@x1.png" srcset="/img/img3_live_desktop@x2.png 2x" width="411" height="318" alt="Фото современные навыки">
+                <img src="/img/img3_live_desktop@x1.png" srcset="/img/img3_live_desktop@x2.png 2x" width="411" height="318" alt="Два парня рассматривающие что-то за монитором">
               </picture>
               <span>
                 Обучение современным навыкам и профессиям
@@ -242,7 +241,7 @@
                 <source media="(max-width: 767px)" srcset="img/img4_live_mobile@x1.webp 1x, img/img4_live_mobile@x2.webp 2x" type="image/webp">
                 <source srcset="img/img4_live_desktop@x1.webp 1x, img/img4_live_desktop@x2.webp 2x" type="image/webp">
                 <source media="(max-width: 767px)" srcset="img/img4_live_mobile@x1.png 1x, img/img4_live_mobile@x2.png 2x">
-                <img src="/img/img4_live_desktop@x1.png" srcset="/img/img4_live_desktop@x2.png 2x" width="411" height="318" alt="Фото совместные проекты">
+                <img src="/img/img4_live_desktop@x1.png" srcset="/img/img4_live_desktop@x2.png 2x" width="411" height="318" alt="Парень и две девушки обнимаются с улыбками на лицах">
               </picture>
               <span>
                 Совместные творческие проекты с израильской молодёжью
@@ -253,7 +252,7 @@
                 <source media="(max-width: 767px)" srcset="img/img5_live_mobile@x1.webp 1x, img/img5_live_mobile@x2.webp 2x" type="image/webp">
                 <source srcset="img/img5_live_desktop@x1.webp 1x, img/img5_live_desktop@x2.webp 2x" type="image/webp">
                 <source media="(max-width: 767px)" srcset="img/img5_live_mobile@x1.png 1x, img/img5_live_mobile@x2.png 2x">
-                <img src="/img/img5_live_desktop@x1.png" srcset="/img/img5_live_desktop@x2.png 2x" width="214" height="318" alt="Фото развитие лидерства">
+                <img src="/img/img5_live_desktop@x1.png" srcset="/img/img5_live_desktop@x2.png 2x" width="214" height="318" alt="Мужчина на возвышенности наблюдает закат">
               </picture>
               <span>
                 Развитие лидерства
@@ -269,7 +268,7 @@
           <button class="life__btn" type="button" title="Пятый слайд" data-number-of="4"></button>
         </div>
       </section>
-      <section class="blogs">
+      <section class="blogs hidden">
         <div class="blogs__wrapper">
           <h2 class="blogs__title">#masaisrael</h2>
           <p class="blogs__text">
@@ -286,7 +285,7 @@
           </a>
         </div>
       </section>
-      <section class="questions">
+      <section class="questions hidden">
         <div class="questions__wrapper">
           <h2 class="questions__title">Частые вопросы</h2>
           <dl class="questions__accordion accordion">
@@ -341,7 +340,7 @@
           </dl>
         </div>
       </section>
-      <section class="feedback">
+      <section class="feedback hidden">
         <div class="feedback__wrapper">
           <h2 class="feedback__title">Отзывы</h2>
           <div class="feedback__slider">
@@ -351,7 +350,7 @@
                   <!-- <source media="(max-width: 767px)" srcset="img/photo_reviews_mobile@x1.webp 1x, img/photo_reviews_mobile@x2.webp 2x" type="image/webp">
                   <source srcset="img/photo_reviews_desktop@x1.webp 1x, img/photo_reviews_desktop@x2.webp 2x" type="image/webp">
                   <source media="(max-width: 767px)" srcset="img/photo_reviews_mobile@x1.png 1x, img/photo_reviews_mobile@x2.png 2x"> -->
-                  <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" srcset="img/photo_reviews_desktop@x2.png 2x" width="364" height="480" alt="Фото Ольги">
+                  <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" srcset="img/photo_reviews_desktop@x2.png 2x" width="364" height="480" alt="Ольга-участник одной из программ">
                 <!-- </picture> -->
                 <div class="feedback__text-wrapper">
                   <h3 class="feedback__author">Ольга Михайлова</h3>
@@ -386,7 +385,7 @@
                 </div>
               </li>
               <li class="feedback__slider-item">
-                <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" width="364" height="480" alt="Фото Ольги">
+                <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" width="364" height="480" alt="Ольга-участник одной из программ">
                 <div class="feedback__text-wrapper">
                   <h3 class="feedback__author">Ольга Михайлова</h3>
                   <p class="feedback__author-programm">
@@ -420,7 +419,7 @@
                 </div>
               </li>
               <li class="feedback__slider-item">
-                <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" width="364" height="480" alt="Фото Ольги">
+                <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" width="364" height="480" alt="Ольга-участник одной из программ">
                 <div class="feedback__text-wrapper">
                   <h3 class="feedback__author">Ольга Михайлова</h3>
                   <p class="feedback__author-programm">
@@ -454,7 +453,7 @@
                 </div>
               </li>
               <li class="feedback__slider-item">
-                <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" width="364" height="480" alt="Фото Ольги">
+                <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" width="364" height="480" alt="Ольга-участник одной из программ">
                 <div class="feedback__text-wrapper">
                   <h3 class="feedback__author">Ольга Михайлова</h3>
                   <p class="feedback__author-programm">
@@ -488,7 +487,7 @@
                 </div>
               </li>
               <li class="feedback__slider-item">
-                <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" width="364" height="480" alt="Фото Ольги">
+                <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" width="364" height="480" alt="Ольга-участник одной из программ">
                 <div class="feedback__text-wrapper">
                   <h3 class="feedback__author">Ольга Михайлова</h3>
                   <p class="feedback__author-programm">
@@ -522,7 +521,7 @@
                 </div>
               </li>
               <li class="feedback__slider-item">
-                <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" width="364" height="480" alt="Фото Ольги">
+                <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" width="364" height="480" alt="Ольга-участник одной из программ">
                 <div class="feedback__text-wrapper">
                   <h3 class="feedback__author">Ольга Михайлова</h3>
                   <p class="feedback__author-programm">
@@ -577,7 +576,7 @@
           </div>
         </div>
       </section>
-      <section class="contacts">
+      <section class="contacts hidden">
         <div class="contacts__wrapper">
           <div class="contacts__text-content">
             <h2 class="contacts__title">Узнать подробности</h2>
@@ -590,7 +589,7 @@
               </p>
               <div class="contacts__card">
                 <div class="contacts__curator">
-                  <img class="contacts__curator-img" src="/img/photo_contacts_curator.jpg" width="112" height="112" alt="Фото куратора">
+                  <img class="contacts__curator-img" src="/img/photo_contacts_curator.jpg" width="112" height="112" alt="Куратор Анна">
                   <div class="contacts__about">
                     <p class="contacts__curator-name">
                       <span>Ваш куратор:</span><span id="curator-name">Анна Горелик</span>
@@ -659,14 +658,15 @@
         </div>
       </section>
     </main>
-    <footer class="page-footer">
+    <footer class="page-footer hidden">
       <div class="page-footer__wrapper">
-        <div class="page-footer__logo">
+        <a class="page-footer__logo" href="#" aria-label="Главная Учеба в Израиле">
           <picture>
-            <source srcset="img/logo_footer.webp" type="image/webp">
-            <img src="img/logo-footer.png" width="85" height="27" alt="Логотип">
+            <source srcset="img/logo_footer@x1.webp 1x, img/logo_footer@x2.webp 2x" type="image/webp">
+            <!-- 1х: 85px; 2x: 170px -->
+            <img src="img/logo_footer@x1.png" srcset="img/logo_footer@x2.png 2x" width="85" height="27" alt="Логотип Учеба в Израиле">
           </picture>
-        </div>
+        </a>
         <div class="page-footer__copyright">
           <p>Copyright someDesignCompany ©2019</p>
         </div>

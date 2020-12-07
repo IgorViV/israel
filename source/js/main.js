@@ -69,7 +69,7 @@ if (btnModalAcceptedClose) {
   });
 }
 
-windows.addEventListener('keydown', function (evt) {
+document.addEventListener('keydown', function (evt) {
   isEscEvent(evt, onModalCallClose);
   isEscEvent(evt, onModalOkClose);
 });

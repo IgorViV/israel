@@ -22,10 +22,17 @@
 }
 
 .page-footer__logo {
-  width: 85px;
-
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
     margin-bottom: 24px;
+  }
+
+  img {
+    display: block;
+    width: 85px;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      width: 99px;
+    }
   }
 }
 
