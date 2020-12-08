@@ -1,9 +1,11 @@
 .about {
+  padding-top: 5px;
   padding-bottom: 96px;
-  background-size: auto;
+  background-size: 1366px auto;
   background-image: url("../img/bg_about_desktop@x1.png");
   background-position: center bottom;
   background-repeat: no-repeat;
+  outline: 1px solid red;
 
   @media (min-resolution: 144dpi),
     (min-resolution: 1.5dppx) {
@@ -11,9 +13,10 @@
   }
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    padding-top: 0;
     padding-bottom: 0;
-    background-size: 131% auto;
-    background-position: center top 195px;
+    background-size: 420px auto;
+    background-position: center bottom 131px;
   }
 }
 
@@ -31,14 +34,14 @@
     font-style: normal;
     font-weight: normal;
     font-size: 17px;
-    line-height: 170%;
+    line-height: 29px;
     text-align: center;
     color: $color-black;
 
     @media (min-width: $mobile) and (max-width: $tablet - 1px) {
       text-align: left;
       font-size: 16px;
-      line-height: 160%;
+      line-height: 26px;
     }
   }
 }
@@ -65,7 +68,7 @@
 
 .about__video {
   position: relative;
-  background-size: auto 100%;
+  background-size: 870px auto;
   background-image: url("../img/photo_about_desktop@x1.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -76,7 +79,13 @@
   }
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    background-size: 150% auto;
+    background-size: 320px auto;
+    background-image: url("../img/photo_about_mobile@x1.png");
+
+    @media (min-resolution: 144dpi),
+      (min-resolution: 1.5dppx) {
+      background-image: url("../img/photo_about_mobile@x2.png");
+    }
   }
 }
 
@@ -92,9 +101,9 @@
 
 .about__video-controls {
   position: absolute;
-  top: 50%;
+  top: 179px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   z-index: 2;
   display: flex;
   justify-content: center;
@@ -105,6 +114,7 @@
   border-radius: 50%;
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    top: 80px;
     width: 80px;
     height: 80px;
   }
@@ -118,7 +128,6 @@
   padding: 0;
   background-color: #ffffff;
   border: none;
-  outline: none;
   border-radius: 50%;
   cursor: pointer;
 

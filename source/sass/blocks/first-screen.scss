@@ -18,14 +18,13 @@
   }
 
   @media (min-width: $tablet) and (max-width: $desktop - 1px) {
-    padding-top: 435px;
     background-size: 1366px auto, 100% auto, 1366px auto;
     background-position: center top, center top 178px, center top;
   }
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    padding-top: 303px;
-    padding-bottom: 90px;
+    padding-top: 335px;
+    padding-bottom: 86px;
     background-size: 912px auto, 347px auto, 912px auto;
     background-position: center top 32px, center top 168px, center top 32px;
   }
