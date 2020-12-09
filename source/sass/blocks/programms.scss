@@ -281,6 +281,10 @@ input[id="religious"]:checked ~ .programms__selectors label[for="religious"] {
 
 input[id="general"]:checked ~ .programms__selectors label[for="general"] {
   margin-top: -16px;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    margin-top: 0;
+  }
 }
 
 input[id="academic"]:checked ~ .programms__selectors label[for="academic"] {
@@ -310,6 +314,10 @@ input[id="volunteerism"]:checked ~ .programms__selectors label[for="volunteerism
 input[id="religious"]:checked ~ .programms__selectors label[for="religious"] {
   margin-bottom: 0;
   margin-top: -20px;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    margin-top: 0;
+  }
 
   span {
     &::before {
