@@ -8,13 +8,13 @@
   padding-top: 538px;
   padding-bottom: 130px;
   background-size: 1366px auto, 1018px auto, 1366px auto;
-  background-image: url("../img/bg_first_girl_desktop@x1.png"), url("../img/bg_israel_desktop@x1.png"), url("../img/bg_first_desktop@x1.png");
+  background-image: url("../img/bg_first_girl_desktop@x1.png"), url("../img/bg_israel_desktop@x1.png"), url("../img/bg_first_desktop@x1.jpg");
   background-position: center top, center top 160px, center top;
   background-repeat: no-repeat;
 
   @media (min-resolution: 144dpi),
     (min-resolution: 1.5dppx) {
-    background-image: url("../img/bg_first_girl_desktop@x2.png"), url("../img/bg_israel_desktop@x2.png"), url("../img/bg_first_desktop@x2.png");
+    background-image: url("../img/bg_first_girl_desktop@x2.png"), url("../img/bg_israel_desktop@x2.png"), url("../img/bg_first_desktop@x2.jpg");
   }
 
   @media (min-width: $tablet) and (max-width: $desktop - 1px) {
@@ -28,21 +28,21 @@
     background-size: 912px auto, 347px auto, 912px auto;
     background-position: center top 32px, center top 168px, center top 32px;
   }
-}
 
-.first-screen__promo {
-  width: 343px;
-  margin: 0;
-  margin-bottom: 32px;
+  p {
+    width: 343px;
+    margin: 0;
+    margin-bottom: 32px;
 
-  @include font-primary($weight: 700, $size: 24px, $lh: 29px, $colorfont: #ffffff);
-  text-align: center;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    @include font-primary($weight: 700, $size: 24px, $lh: 29px, $colorfont: #ffffff);
+    text-align: center;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 
-  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    width: 288px;
-    font-size: 20px;
-    line-height: 24px;
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      width: 288px;
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 }
 

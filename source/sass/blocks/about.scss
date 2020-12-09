@@ -5,7 +5,6 @@
   background-image: url("../img/bg_about_desktop@x1.png");
   background-position: center bottom;
   background-repeat: no-repeat;
-  outline: 1px solid red;
 
   @media (min-resolution: 144dpi),
     (min-resolution: 1.5dppx) {
@@ -23,6 +22,26 @@
 .about__wrapper {
   max-width: 870px;
   margin: 0 auto;
+
+  h2 {
+    margin: 0;
+    margin-bottom: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-family: $font-family--headers;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 49px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: $color-blue;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      font-size: 32px;
+      line-height: 39px;
+    }
+  }
 
   p {
     max-width: 752px;
@@ -44,25 +63,11 @@
       line-height: 26px;
     }
   }
-}
 
-.about__title {
-  margin: 0;
-  margin-bottom: 24px;
-  padding-left: 16px;
-  padding-right: 16px;
-  font-family: $font-family--headers;
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 49px;
-  text-align: center;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  color: $color-blue;
-
-  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    font-size: 32px;
-    line-height: 39px;
+  span {
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      display: none;
+    }
   }
 }
 
