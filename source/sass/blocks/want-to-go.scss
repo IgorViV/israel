@@ -3,15 +3,21 @@
   padding-bottom: 131px;
   background-size: auto;
   background-image: url("../img/bg_backpack@x1.png"), url("../img/bg_girl-flag_desktop@x1.png");
-  background-position: left center, right bottom;
+  background-position: left top 166px, right bottom;
   background-repeat: no-repeat;
+
+  @media (min-width: $tablet) and (max-width: $desktop - 1px) {
+    padding-top: 80px;
+    padding-bottom: 308px;
+    background-image: url("../img/bg_backpack@x1.png"), url("../img/bg_girl-flag_mobile@x1.png");
+    background-position: left top 166px, center bottom;
+  }
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
     padding-top: 80px;
     padding-left: 16px;
     padding-right: 16px;
     padding-bottom: 308px;
-    background-size: auto;
     background-image: url("../img/bg_backpack@x1.png"), url("../img/bg_girl-flag_mobile@x1.png");
     background-position: left top, center bottom;
   }
@@ -21,45 +27,54 @@
   max-width: 945px;
   margin: 0 auto;
 
-  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    width: 100%;
+  @media (min-width: $tablet) and (max-width: $desktop - 1px) {
+    max-width: 477px;
   }
-}
-
-.want-to-go__title {
-  margin: 0;
-  margin-bottom: 24px;
-  font-family: $font-family--headers;
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 49px;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  text-align: left;
-  color: $color-blue;
-
-  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    font-size: 32px;
-    line-height: 39px;
-    text-align: center;
-  }
-}
-
-.want-to-go__text {
-  max-width: 400px;
-  margin: 0;
-  margin-bottom: 64px;
-  font-family: $font-family--primary;
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 170%;
-  text-align: left;
-  color: rgba(72, 72, 72, 0.87);
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
     width: 100%;
+    max-width: 320px;
+  }
+
+  h2 {
+    margin: 0;
     margin-bottom: 24px;
-    font-size: 16px;
-    line-height: 160%;
+    font-family: $font-family--headers;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 49px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    text-align: left;
+    color: $color-blue;
+
+    @media (min-width: $tablet) and (max-width: $desktop - 1px) {
+      text-align: center;
+    }
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      font-size: 32px;
+      line-height: 39px;
+      text-align: center;
+    }
+  }
+
+  p {
+    max-width: 400px;
+    margin: 0;
+    margin-bottom: 64px;
+    font-family: $font-family--primary;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 170%;
+    text-align: left;
+    color: rgba(72, 72, 72, 0.87);
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      width: 100%;
+      margin-bottom: 24px;
+      font-size: 16px;
+      line-height: 160%;
+    }
   }
 }
