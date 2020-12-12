@@ -48,14 +48,13 @@
     text-align: left;
     color: $color-blue;
 
-    @media (min-width: $tablet) and (max-width: $desktop - 1px) {
+    @media (min-width: $mobile) and (max-width: $desktop - 1px) {
       text-align: center;
     }
 
     @media (min-width: $mobile) and (max-width: $tablet - 1px) {
       font-size: 32px;
       line-height: 39px;
-      text-align: center;
     }
   }
 
