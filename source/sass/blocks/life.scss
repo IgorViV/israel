@@ -2,257 +2,324 @@
   position: relative;
   padding-top: 43px;
   padding-bottom: 64px;
-  background-size: auto;
-  background-image: url("../img/bg_live_watch@x1.png"), url("../img/bg_live_watercolor@x1.png");
-  background-position: right bottom 146px, center bottom 10px;
+  background-size: 90px auto, 1366px auto, 1366px auto;
+  background-image: url("../img/bg_life_watch@x1.png"), url("../img/bg_life_watercolor@x1.png"), url("../img/bg_travel_watercolor@x1.png");
+  background-position: right top 656px, left top, left top -1024px;
   background-repeat: no-repeat;
 
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    background-image: url("../img/bg_life_watch@x2.png"), url("../img/bg_life_watercolor@x2.png"), url("../img/bg_travel_watercolor@x2.png");
+  }
+
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    padding-top: 55px;
     padding-bottom: 24px;
     background-image: none;
   }
-}
 
-.life__title {
-  margin: 0;
-  margin-bottom: 24px;
-  font-family: $font-family--headers;
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 49px;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  text-align: center;
-  color: $color-blue;
+  h2 {
+    @include reset;
+    margin-bottom: 24px;
 
-  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    font-size: 32px;
-    line-height: 39px;
+    @include font-headers($lh: 49px, $colorfont: $color-blue);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    text-align: center;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      font-size: 32px;
+      line-height: 39px;
+    }
+  }
+
+  p {
+    max-width: 744px;
+    min-width: 288px;
+    margin: 0 auto;
+    margin-bottom: 46px;
+    padding: 0;
+    padding-right: 24px;
+
+    @include font-primary($size: 17px, $lh: 29px, $colorfont: rgba(72, 72, 72, 0.87));
+    text-align: right;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      margin-bottom: 24px;
+      padding-left: 16px;
+      padding-right: 16px;
+      font-size: 16px;
+      line-height: 26px;
+      text-align: left;
+    }
+
+    br {
+      display: none;
+
+      @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+        display: initial;
+      }
+    }
   }
 }
 
-.life__text {
-  max-width: 720px;
-  min-width: 288px;
+.life__gallery {
+  max-width: 1190px;
   margin: 0 auto;
-  margin-bottom: 46px;
-  font-family: $font-family--primary;
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 170%;
-  text-align: right;
-  color: rgba(72, 72, 72, 0.87);
+  padding-left: 16px;
+  padding-right: 16px;
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    font-size: 16px;
-    line-height: 160%;
-  }
-}
-
-.life__content-wrapper {
-  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    padding-left: 0;
+    padding-right: 0;
     overflow: hidden;
+  }
+
+  ul {
+    @include reset;
+    list-style: none;
+  }
+
+  li {
+    @include reset;
   }
 }
 
 .life__slider {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1154px;
   margin: 0 auto;
-  padding-left: 494px;
-  list-style: none;
   transform: translateX(0%);
 
-  @media (max-width: 1154px) {
-    justify-content: space-around;
-    padding-left: 0;
+  @include flexible ($align: flex-start, $wrap: nowrap);
+
+  @media (min-width: $tablet) and (max-width: $desktop - 1px) {
+    flex-direction: column;
+    align-items: center;
   }
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    flex-wrap: nowrap;
-    justify-content: start;
     min-width: 500vw;
   }
 }
 
-.life__slider-item {
-  position: relative;
-  margin-right: 30px;
-  margin-bottom: 30px;
+.life__slide {
+  @include flexible ($justify: center, $align: center);
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
     width: 100vw;
-    min-width: 288px;
-    margin-bottom: 0;
-    overflow: hidden;
+  }
+}
+
+.life__img-wrapper {
+  position: relative;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    width: 288px;
+    height: 400px;
   }
 
   img {
     display: block;
-    margin: 0 auto;
+    width: 211px;
 
     @media (min-width: $mobile) and (max-width: $tablet - 1px) {
       width: 288px;
+      height: 400px;
+      object-fit: contain;
     }
   }
 
   span {
     position: absolute;
-    left: 0;
+    left: 24px;
+    right: 67px;
     bottom: 32px;
-    z-index: 2;
-    width: 100%;
-    margin: 0;
-    padding-left: 24px;
-    font-family: $font-family--headers-big;
-    font-weight: 800;
-    font-size: 21px;
-    line-height: 25px;
-    color: #ffffff;
+    z-index: 5;
+
+    @include font-headers-big($weight: 800, $size: 21px, $lh: 25px, $colorfont: #ffffff);
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 
     @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-      left: 50%;
+      left: 0;
+      right: 0;
       bottom: 24px;
-      transform: translateX(-50%);
-      width: 256px;
-      padding-left: 0;
       font-size: 18px;
       line-height: 21px;
       text-align: center;
     }
   }
+}
 
-  &:first-child {
-    position: absolute;
-    bottom: 0;
-    left: 6px;
-    z-index: 5;
+.life__slide--primary {
+  width: 482px;
+  margin-right: 15px;
+
+  @media (min-width: $tablet) and (max-width: $desktop - 1px) {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    width: 100vw;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+
+.life__img-wrapper--primary {
+  margin-top: -66px;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    width: 288px;
+    margin-top: 0;
+  }
+
+  img {
     width: 482px;
-    margin: 0;
-
-    @media (max-width: 1154px) {
-      position: relative;
-      left: 0;
-      width: 211px;
-      margin-right: 30px;
-      margin-bottom: 30px;
-    }
+    object-fit: cover;
 
     @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-      position: relative;
+      width: 288px;
+      object-fit: contain;
+    }
+  }
+
+  span {
+    left: 40px;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
       left: 0;
-      width: 100vw;
+    }
+
+    br {
+      display: none;
+
+      @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+        display: initial;
+      }
+    }
+  }
+}
+
+.life__slide-group {
+  width: 655px;
+
+  @include flexible ($align: flex-start, $wrap: wrap);
+  flex-shrink: 0;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    flex-wrap: nowrap;
+    width: 400vw;
+  }
+
+  .life__slide {
+    margin-right: 30px;
+    margin-bottom: 30px;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
       margin-right: 0;
       margin-bottom: 0;
     }
 
-    img {
-      @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-        width: 288px;
+    .life__img-wrapper {
+      span {
+        @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+          bottom: 2px;
+        }
       }
     }
 
-    span {
-      width: 360px;
-      padding-left: 40px;
-
-      @media (max-width: 1154px) {
-        width: 100%;
-        padding-left: 24px;
-      }
-
-      @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-        width: 256px;
-        padding-left: 0;
-      }
-    }
-  }
-
-  &:nth-child(2) {
-    width: 211px;
-
-    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-      width: 100vw;
+    &:nth-child(2) {
+      width: 411px;
       margin-right: 0;
-    }
 
-    img {
       @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-        width: 288px;
+        width: 100vw;
+      }
+
+      .life__img-wrapper {
+        width: 411px;
+
+        @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+          width: 288px;
+        }
+
+        img {
+          width: 411px;
+
+          @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+            object-fit: cover;
+          }
+        }
+
+        span {
+          left: 32px;
+
+          @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+            left: 0;
+            bottom: 24px;
+          }
+        }
       }
     }
 
-    span {
-      width: 144px;
+    &:nth-child(3) {
+      width: 411px;
+      margin-bottom: 0;
 
       @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-        width: 256px;
-        padding-left: 0;
+        width: 100vw;
+      }
+
+      .life__img-wrapper {
+        width: 411px;
+
+        @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+          width: 288px;
+        }
+
+        img {
+          width: 411px;
+
+          @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+            object-fit: cover;
+          }
+        }
+
+        span {
+          left: 32px;
+          right: 19px;
+
+          @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+            left: 0;
+            right: 0;
+            bottom: 23px;
+          }
+        }
       }
     }
-  }
 
-  &:nth-child(3) {
-    width: 411px;
-    margin-right: 0;
-
-    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-      width: 100vw;
-    }
-
-    span {
-      width: 384px;
-
-      @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-        width: 256px;
-        padding-left: 0;
-      }
-    }
-  }
-
-  &:nth-child(4) {
-    width: 411px;
-    margin-bottom: 0;
-
-    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-      width: 100vw;
+    &:nth-child(4) {
+      width: 214px;
       margin-right: 0;
-    }
-
-    span {
-      width: 384px;
+      margin-bottom: 0;
 
       @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-        width: 256px;
-        padding-left: 0;
+        width: 100vw;
       }
-    }
-  }
 
-  &:nth-child(5) {
-    width: 214px;
-    margin-right: 0;
-    margin-bottom: 0;
+      .life__img-wrapper {
+        img {
+          width: 214px;
 
-    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-      width: 100vw;
-    }
+          @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+            width: 288px;
+          }
+        }
 
-    img {
-      @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-        width: 288px;
-      }
-    }
-
-    span {
-      width: 144px;
-
-      @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-        width: 256px;
-        padding-left: 0;
+        span {
+          @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+            bottom: 23px;
+          }
+        }
       }
     }
   }
