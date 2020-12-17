@@ -3,10 +3,15 @@
   padding-top: 120px;
   padding-right: 167px;
   padding-bottom: 196px;
-  background-size: auto 100%;
+  background-size: 1361px 583px;
   background-image: url("../img/bg_hashtag_desktop@x1.png");
-  background-position: left center;
+  background-position: left 5px top;
   background-repeat: no-repeat;
+
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    background-image: url("../img/bg_hashtag_desktop@x2.png");
+  }
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
     margin-top: 80px;
@@ -17,7 +22,7 @@
     background-position: left -69px top 44px;
   }
 
-  @media (min-width: 532px) and (max-width: $tablet - 1px) {
+  @media (min-width: 563px) and (max-width: $tablet - 1px) {
     background-position: center top 44px;
   }
 }
@@ -31,12 +36,50 @@
     margin: 0 auto;
   }
 
+  h2 {
+    margin: 0;
+    margin-bottom: 24px;
+    font-family: $font-family--headers;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 49px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: $color-blue;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      margin-bottom: 96px;
+      text-align: center;
+    }
+  }
+
+  p {
+    margin: 0;
+    margin-bottom: 48px;
+    padding-left: 3px;
+    font-family: $font-family--primary;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 29px;
+    color: rgba(255, 255, 255, 0.87);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      margin-bottom: 57px;
+      padding-left: 23px;
+      padding-right: 23px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+
   a {
     @include flexible ($justify: center, $align: center);
     width: 230px;
     padding: 0;
-    padding-top: 18px;
-    padding-bottom: 17px;
+    padding-top: 20px;
+    padding-bottom: 19px;
 
     @include font-primary($weight: 500, $size: 17px, $lh: 20px, $colorfont: #ffffff);
     text-align: center;
@@ -47,7 +90,6 @@
     border: none;
     border-radius: 80px;
     cursor: pointer;
-    outline: none;
 
     &:hover {
       background: #ffc341;
@@ -66,42 +108,5 @@
       margin-right: 8px;
       fill: #ffffff;
     }
-  }
-}
-
-.blogs__title {
-  margin: 0;
-  margin-bottom: 24px;
-  font-family: $font-family--headers;
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 49px;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  color: $color-blue;
-
-  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    margin-bottom: 96px;
-    text-align: center;
-  }
-}
-
-.blogs__text {
-  margin: 0;
-  margin-bottom: 48px;
-  font-family: $font-family--primary;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 170%;
-  color: rgba(255, 255, 255, 0.87);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
-
-  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    margin-bottom: 57px;
-    padding-left: 23px;
-    padding-right: 23px;
-    font-size: 16px;
-    line-height: 160%;
   }
 }
