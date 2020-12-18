@@ -1,6 +1,4 @@
 .accordion {
-  max-width: 585px;
-
   @include reset;
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
@@ -11,11 +9,12 @@
 .accordion__item {
   @include reset;
   margin-bottom: 24px;
-  padding-bottom: 32px;
+  padding-bottom: 24px;
   border-bottom: 1px solid rgba(72, 72, 72, 0.2);
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    padding-bottom: 16px;
+    margin-bottom: 22px;
+    padding-bottom: 0;
   }
 
   &:last-child {
@@ -24,19 +23,20 @@
 }
 
 .accordion__item-header {
+  @include reset;
   position: relative;
   display: flex;
   align-items: baseline;
   padding-right: 131px;
 
-  @include font-primary($size: 17px, $lh: 150%, $colorfont: $color-black);
+  @include font-primary($size: 17px, $lh: 25px, $colorfont: $color-black);
   cursor: pointer;
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
     margin-bottom: 16px;
     padding-right: 31px;
     font-size: 16px;
-    line-height: 160%;
+    line-height: 26px;
   }
 
   &::after {
@@ -50,31 +50,38 @@
     background-image: url("../img/icon_down.svg");
     background-position: center;
     background-repeat: no-repeat;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      right: 0;
+    }
   }
 
   span {
     margin-right: 16px;
     font-weight: bold;
     font-size: 28px;
-    line-height: 170%;
+    line-height: 48px;
     background: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #ffd701;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      margin-right: 11px;
+    }
   }
 }
 
 .accordion__item-content {
+  @include reset;
   display: none;
   max-width: 480px;
-  margin-top: 24px;
 
-  @include reset;
   @include font-primary($colorfont: rgba(72, 72, 72, 0.74));
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
     font-size: 14px;
-    line-height: 160%;
+    line-height: 22px;
   }
 }
 
@@ -84,5 +91,10 @@
 
 .accordion__item-header--active ~ .accordion__item-content {
   display: block;
-  margin-top: 24px;
+  margin-top: 15px;
+  padding-bottom: 5px;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    padding-bottom: 15px;
+  }
 }
