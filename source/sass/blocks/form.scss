@@ -25,10 +25,6 @@
       border-color: #ffc92c;
     }
 
-    &:focus:invalid {
-      border-color: #ff0000;
-    }
-
     &::placeholder {
       font-family: inherit;
       font-weight: 500;
