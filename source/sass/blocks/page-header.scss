@@ -103,6 +103,7 @@
 
 .page-header__btn {
   padding: 0;
+  text-decoration: none;
 
   @include font-primary($weight: 500, $size: 15px, $lh: 18px, $colorfont: $text-color);
   font-variant: small-caps;
