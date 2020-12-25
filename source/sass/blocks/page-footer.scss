@@ -2,12 +2,14 @@
   padding-top: 24px;
   padding-bottom: 24px;
   border-top: 1px solid rgba(72, 72, 72, 0.2);
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    padding-top: 30px;
+  }
 }
 
 .page-footer__wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flexible ($justify: space-between, $align: center);
   max-width: 1171px;
   margin: 0 auto;
   padding-left: 12px;
@@ -37,8 +39,11 @@
 }
 
 .page-footer__copyright {
+  padding-left: 28px;
+
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    margin-bottom: 28px;
+    margin-bottom: 30px;
+    padding-left: 0;
   }
 
   p {
@@ -53,22 +58,23 @@
 }
 
 .page-footer__social {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  @include flexible ($align: center);
+  @include reset-list;
+  margin-left: -4px;
 }
 
 .page-footer__social-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexible ($justify: center, $align: center);
   width: 24px;
   height: 24px;
   margin: 0;
   margin-right: 20px;
   padding: 0;
+
+  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+    width: 32px;
+    height: 32px;
+  }
 
   &:last-child {
     margin-right: 0;
@@ -76,5 +82,41 @@
 
   svg {
     fill: rgba(72, 72, 72, 0.5);
+  }
+}
+
+.page-footer__social-item--facebook {
+  svg {
+    width: 11px;
+    height: 22px;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      width: 14px;
+      height: 28px;
+    }
+  }
+}
+
+.page-footer__social-item--twitter {
+  svg {
+    width: 24px;
+    height: 18px;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      width: 30px;
+      height: 24px;
+    }
+  }
+}
+
+.page-footer__social-item--instagram {
+  svg {
+    width: 20px;
+    height: 20px;
+
+    @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+      width: 26px;
+      height: 26px;
+    }
   }
 }
