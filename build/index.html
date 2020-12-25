@@ -649,23 +649,23 @@
       </section>
       <section class="contacts">
         <div class="contacts__wrapper">
-          <div class="contacts__text-content">
-            <h2 class="contacts__title">Узнать подробности</h2>
-            <div class="contacts__detail">
-              <p class="contacts__position">
-                <img src="img/icon_marker-city.svg" width="12" height="18" alt="Маркер">
-                <span class="contacts__city">Ваш город:</span>
-                <span class="contacts__city contacts__city--name">новосибирск</span>
-                <img src="img/icon_gps.svg" width="16" height="15" alt="GPS">
-              </p>
+          <div class="contacts__details">
+            <div class="contacts__text-content">
+              <h2>Узнать подробности</h2>
+              <div class="contacts__position">
+                <span>Ваш город:</span>
+                <button type="button" title="Выбрать Ваш город">
+                  <span>новосибирск</span>
+                </button>
+              </div>
               <div class="contacts__card">
                 <div class="contacts__curator">
                   <img class="contacts__curator-img" src="/img/photo_contacts_curator.jpg" width="112" height="112" alt="Куратор Анна">
                   <div class="contacts__about">
-                    <p class="contacts__curator-name">
-                      <span>Ваш куратор:</span><span id="curator-name">Анна Горелик</span>
+                    <p>
+                      Ваш куратор: <span id="curator-name">Анна Горелик</span>
                     </p>
-                    <p class="contacts__curator-address">
+                    <p>
                       Новосибирск, ул. Щетинкина 68, культурный центр «Бейт Менахем»
                     </p>
                     <ul class="contacts__social">
@@ -693,31 +693,31 @@
                     </ul>
                   </div>
                 </div>
-                <p class="contacts__note">
-                  Куратор является опытным специалистом агентства Сохнут и знает о проекте «Маса» всё! Свяжитесь с куратором, узнайте подробнее о программах и выберите свою!
+                <p>
+                  Куратор является опытным специалистом агентства Сохнут и&nbsp;знает о проекте «Маса» всё! Свяжитесь с куратором, узнайте&nbsp;подробнее о программах и выберите свою&nbsp;!
                 </p>
               </div>
             </div>
-          </div>
-          <div class="contacts__map">
+            <div class="contacts__map">
+            </div>
           </div>
           <div class="contacts__feedback">
-            <div class="contacts__feedback-text-wrapper">
-              <p class="contacts__feedback-text contacts__feedback-text--medium">
+            <div class="contacts__feedback-text">
+              <p>
                 Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!
               </p>
-              <p class="contacts__feedback-text">
-                Мы не передаём данные третьим лицам. Ваши данные будут в безопасности и вам не придёт спам от нас!
+              <p>
+                Мы не передаём данные третьим лицам. Ваши данные будут в безопасности и вам не придёт спам от нас !
               </p>
             </div>
             <form class="contacts__form form form--contacts" action="#" method="GET">
-              <div class="form__group">
+              <div class="form__group form__group--contacts">
                 <label class="visually-hidden" for="contacts-name">
                   Имя
                 </label>
                 <input id="contacts-name" type="text" name="name" placeholder="имя" required="">
               </div>
-              <div class="form__group">
+              <div class="form__group form__group--contacts">
                 <label class="visually-hidden" for="contacts-phone">
                   Телефон
                 </label>
