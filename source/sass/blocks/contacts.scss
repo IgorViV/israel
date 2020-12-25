@@ -104,6 +104,7 @@
 
   button {
     position: relative;
+    cursor: pointer;
 
     @include reset;
     padding-right: 25px;
