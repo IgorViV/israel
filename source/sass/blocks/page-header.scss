@@ -103,12 +103,9 @@
 
 .page-header__btn {
   padding: 0;
-<<<<<<< HEAD
-=======
   text-decoration: none;
 
   @include font-primary($weight: 500, $size: 15px, $lh: 18px, $colorfont: $text-color);
->>>>>>> task-correction
   font-variant: small-caps;
   background-color: transparent;
   border: none;
