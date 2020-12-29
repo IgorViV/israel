@@ -249,22 +249,23 @@
   padding: 0;
   background: transparent;
   border: none;
+  cursor: pointer;
 
   svg {
     width: 11px;
     height: auto;
-    opacity: 0.2;
+    opacity: 0.5;
+  }
+
+  &:disabled {
+    cursor: auto;
+
+    svg {
+      opacity: 0.2;
+    }
   }
 }
 
 .feedback__btn--prev {
   margin-right: 16px;
-}
-
-.feedback__btn--active {
-  cursor: pointer;
-
-  svg {
-    opacity: 0.5;
-  }
 }
