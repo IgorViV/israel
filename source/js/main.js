@@ -328,7 +328,7 @@
   feedbackSliderItems[0].classList.add('feedback__slider-item--active');
   setSliderNumber(1);
   setSumSlides(feedbackSliderItems.length);
-  feedbackBtnPrev.setAttribute("disabled", "true");
+  feedbackBtnPrev.setAttribute('disabled', 'true');
 
   feedbackSliderControl.addEventListener('click', function (evt) {
     evt.preventDefault();
@@ -351,10 +351,10 @@
         return;
       }
       if (feedbackBtnPrev.disabled) {
-        feedbackBtnPrev.removeAttribute("disabled");
+        feedbackBtnPrev.removeAttribute('disabled');
       }
       if (!feedbackBtnPrev.disabled && currentSlide + 1 >= position.getMax) {
-        feedbackBtnNext.setAttribute("disabled", "true");
+        feedbackBtnNext.setAttribute('disabled', 'true');
       }
       feedbackSliderItems[currentSlide].classList.remove('feedback__slider-item--active');
       currentSlide++;
@@ -366,10 +366,10 @@
         return;
       }
       if (feedbackBtnNext.disabled) {
-        feedbackBtnNext.removeAttribute("disabled");
+        feedbackBtnNext.removeAttribute('disabled');
       }
       if (!feedbackBtnNext.disabled && currentSlide - 1 <= position.getMin) {
-        feedbackBtnPrev.setAttribute("disabled", "true");
+        feedbackBtnPrev.setAttribute('disabled', 'true');
       }
       feedbackSliderItems[currentSlide].classList.remove('feedback__slider-item--active');
       currentSlide--;
