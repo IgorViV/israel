@@ -236,6 +236,7 @@
       font-size: 13px;
       line-height: 19px;
       color: rgba(72, 72, 72, 0.74);
+      cursor: pointer;
 
       &::before {
         @include pseudo();

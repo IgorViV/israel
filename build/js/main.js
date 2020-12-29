@@ -177,6 +177,9 @@
     if (modalCall.classList.contains('modal--hidden')) {
       modalCall.classList.remove('modal--hidden');
     }
+    window.onscroll = function () {
+      return false;
+    }
   }
 
   function onModalCallClose() {
@@ -233,22 +236,24 @@
 
   transformSlider(currentNumberSlide);
 
-  sliderControls.onclick = function (evt) {
-    evt.preventDefault();
-    var btn = evt.target.closest('button');
-    if (!btn) {
-      return;
-    }
-    if (!sliderControls.contains(btn)) {
-      return;
-    }
-    addBtnActive(btn);
-    removeBtnActive(sliderBtn[currentNumberSlide]);
+  if (sliderControls) {
+    sliderControls.onclick = function (evt) {
+      evt.preventDefault();
+      var btn = evt.target.closest('button');
+      if (!btn) {
+        return;
+      }
+      if (!sliderControls.contains(btn)) {
+        return;
+      }
+      addBtnActive(btn);
+      removeBtnActive(sliderBtn[currentNumberSlide]);
 
-    currentNumberSlide = getCurrentIndexBtn(btn);
+      currentNumberSlide = getCurrentIndexBtn(btn);
 
-    transformSlider(currentNumberSlide);
-  };
+      transformSlider(currentNumberSlide);
+    };
+  }
 
   window.addEventListener('resize', function () {
     if (document.documentElement.clientWidth >= 767) {
@@ -291,36 +296,31 @@
 (function () {
   var accordion = document.querySelector('.accordion');
 
-  accordion.addEventListener('click', function (evt) {
-    evt.preventDefault();
-    var elemDt = evt.target.closest('dt');
-    if (!elemDt) {
-      return;
-    }
-    if (!accordion.contains(elemDt)) {
-      return;
-    }
-    elemDt.classList.toggle('accordion__item-header--active');
-  });
+  if (accordion) {
+    accordion.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      var elemDt = evt.target.closest('dt');
+      if (!elemDt) {
+        return;
+      }
+      if (!accordion.contains(elemDt)) {
+        return;
+      }
+      elemDt.classList.toggle('accordion__item-header--active');
+    });
+  }
 })();
 
 // feedback slider:
 (function () {
   var feedbackSlider = document.querySelector('.feedback__slider');
-  // var feedbackSliderList = feedbackSlider.querySelector('.feedback__slider-list');
   var feedbackSliderItems = feedbackSlider.querySelectorAll('.feedback__slider-item');
   var feedbackSliderControl = feedbackSlider.querySelector('.feedback__slider-controls');
-  // var feedbackBtns = feedbackSliderControl.querySelectorAll('.feedback__btn');
   var feedbackBtnPrev = feedbackSlider.querySelector('.feedback__btn--prev');
   var feedbackBtnNext = feedbackSlider.querySelector('.feedback__btn--next');
   var feedbackSlideNumber = feedbackSlider.querySelector('.feedback__slider-number');
   var feedbackSlideSum = feedbackSlider.querySelector('.feedback__slider-sum');
-  // var sliderWidth = parseFloat(getComputedStyle(feedbackSliderList).width);
-  // var sliderItemWidth = parseFloat(getComputedStyle(feedbackSliderItems[0]).width);
   var currentSlide = 0;
-  // var positionLeftItem = 0;
-  // var transformValue = 0;
-  // var stepTransform = sliderItemWidth / sliderWidth * 100;
   var position = {
     getMin: 0,
     getMax: feedbackSliderItems.length - 1
@@ -335,33 +335,24 @@
   feedbackSliderItems[0].classList.add('feedback__slider-item--active');
   setSliderNumber(1);
   setSumSlides(feedbackSliderItems.length);
-  feedbackBtnPrev.setAttribute("disabled", "true");
+  feedbackBtnPrev.setAttribute('disabled', 'true');
 
-  feedbackSliderControl.addEventListener('click', function (evt) {
-    evt.preventDefault();
-    var btn = evt.target.closest('button');
-    if (!btn) {
-      return;
-    }
-    if (!feedbackSliderControl.contains(btn)) {
-      return;
-    }
+  if (feedbackSliderControl) {
+    feedbackSliderControl.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      var btn = evt.target.closest('button');
+      if (!btn) {
+        return;
+      }
+      if (!feedbackSliderControl.contains(btn)) {
+        return;
+      }
 
-    var direction = btn.classList.contains('feedback__btn--next') ? 'right' : 'left';
+      var direction = btn.classList.contains('feedback__btn--next') ? 'right' : 'left';
 
-    showFeedbackItem(direction);
-  });
-
-  // Отключение элемента
-// document.getElementById('buttonRemove').setAttribute("disabled", "true");
-
-// Задействование элемента путём снятия атрибута "disabled"
-// document.getElementById('buttonRemove').removeAttribute("disabled");
-
-  // elem.hasAttribute(name) – проверяет наличие атрибута.
-  // elem.getAttribute(name) – получает значение атрибута.
-  // elem.setAttribute(name, value) – устанавливает значение атрибута.
-  // elem.removeAttribute(name) – удаляет атрибут.
+      showFeedbackItem(direction);
+    });
+  }
 
   function showFeedbackItem(direction) {
     if (direction === 'right') {
@@ -369,10 +360,10 @@
         return;
       }
       if (feedbackBtnPrev.disabled) {
-        feedbackBtnPrev.removeAttribute("disabled");
+        feedbackBtnPrev.removeAttribute('disabled');
       }
       if (!feedbackBtnPrev.disabled && currentSlide + 1 >= position.getMax) {
-        feedbackBtnNext.setAttribute("disabled", "true");
+        feedbackBtnNext.setAttribute('disabled', 'true');
       }
       feedbackSliderItems[currentSlide].classList.remove('feedback__slider-item--active');
       currentSlide++;
@@ -384,10 +375,10 @@
         return;
       }
       if (feedbackBtnNext.disabled) {
-        feedbackBtnNext.removeAttribute("disabled");
+        feedbackBtnNext.removeAttribute('disabled');
       }
       if (!feedbackBtnNext.disabled && currentSlide - 1 <= position.getMin) {
-        feedbackBtnPrev.setAttribute("disabled", "true");
+        feedbackBtnPrev.setAttribute('disabled', 'true');
       }
       feedbackSliderItems[currentSlide].classList.remove('feedback__slider-item--active');
       currentSlide--;
