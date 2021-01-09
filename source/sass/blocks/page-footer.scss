@@ -80,8 +80,18 @@
     margin-right: 0;
   }
 
+  a {
+    @include flexible ($justify: center, $align: center);
+  }
+
   svg {
-    fill: rgba(72, 72, 72, 0.5);
+    fill: rgba(72, 72, 72, 0.2);
+  }
+
+  &:hover {
+    svg {
+      fill: rgba(72, 72, 72, 0.5);
+    }
   }
 }
 

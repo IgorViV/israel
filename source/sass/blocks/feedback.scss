@@ -20,8 +20,6 @@
 .feedback__wrapper {
   max-width: 1203px;
   margin: 0 auto;
-  padding-left: 16px;
-  padding-right: 16px;
 
   h2 {
     margin: 0;
@@ -43,25 +41,25 @@
 .feedback__slider {
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
 .feedback__slider-list {
-  width: 100%;
+  @include flexible ($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap);
+  width: 600vw;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .feedback__slider-item {
-  display: none;
-}
-
-.feedback__slider-item--active {
   @include flexible ($align: flex-start);
-  width: 100%;
+  width: 100vw;
+  max-width: 1203px;
+  min-height: 440px;
   margin: 0;
-  padding: 0;
-  outline-offset: -2px;
+  padding-left: 16px;
+  padding-right: 16px;
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
     flex-direction: column;
@@ -191,9 +189,20 @@
   margin: 0;
   padding: 0;
 
+  &:hover {
+    svg {
+      fill: $color-black;
+      opacity: 0.5;
+    }
+  }
+
+  a {
+    @include flexible ($justify: center, $align: center);
+  }
+
   svg {
     fill: $color-black;
-    opacity: 0.5;
+    opacity: 0.2;
   }
 }
 
@@ -207,7 +216,8 @@
 
 .feedback__slider-nav {
   position: absolute;
-  left: 452px;
+  // left: 452px;
+  left: 468px;
   bottom: 0;
   z-index: 10;
   transform: translateX(-50%);
