@@ -4,13 +4,13 @@
   padding-right: 167px;
   padding-bottom: 196px;
   background-size: 1361px 583px;
-  background-image: url("../img/bg_hashtag_desktop@x1.png");
+  background-image: url("../img/bg_hashtag_desktop@x1.jpg");
   background-position: left 5px top;
   background-repeat: no-repeat;
 
   @media (min-resolution: 144dpi),
     (min-resolution: 1.5dppx) {
-    background-image: url("../img/bg_hashtag_desktop@x2.png");
+    background-image: url("../img/bg_hashtag_desktop@x2.jpg");
   }
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {

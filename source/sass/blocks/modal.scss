@@ -12,6 +12,8 @@
   background-color: $color-background;
   border-radius: 8px;
   box-shadow: 0 8px 24px -12px #484848;
+  overflow: hidden;
+  overflow-y: auto;
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
     top: 0;
@@ -20,7 +22,6 @@
     min-height: 100vh;
     padding: 0;
     padding-top: 32px;
-    overflow-y: scroll;
   }
 }
 
@@ -80,7 +81,7 @@
   width: 18px;
   height: 17px;
   background-color: transparent;
-  background-image: url("../img/icon-close.svg");
+  background-image: url("../img/close_icon.svg");
   background-position: center;
   background-repeat: no-repeat;
   border: none;
@@ -111,7 +112,7 @@
     width: 66px;
     height: 64px;
     background-size: 100%;
-    background-image: url("../img/icon_checkmark.svg");
+    background-image: url("../img/ok_icon.svg");
     background-position: center;
     background-repeat: no-repeat;
   }

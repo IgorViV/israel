@@ -47,7 +47,7 @@
     width: 15px;
     height: 8px;
     background-size: auto;
-    background-image: url("../img/icon_down.svg");
+    background-image: url("../img/down_icon.svg");
     background-position: center;
     background-repeat: no-repeat;
 
@@ -86,7 +86,7 @@
 }
 
 .accordion__item-header--active::after {
-  background-image: url("../img/icon_up.svg");
+  background-image: url("../img/up_icon.svg");
 }
 
 .accordion__item-header--active ~ .accordion__item-content {

@@ -87,7 +87,7 @@
     width: 12px;
     height: 18px;
     background-size: contain;
-    background-image: url("../img/icon_marker-city.svg");
+    background-image: url("../img/marker-city.svg");
     background-position: center;
     background-repeat: no-repeat;
     transform: translateY(-50%);
@@ -119,7 +119,7 @@
       width: 16px;
       height: 15px;
       background-size: contain;
-      background-image: url("../img/icon_gps.svg");
+      background-image: url("../img/gps_icon.svg");
       background-position: center;
       background-repeat: no-repeat;
       transform: translateY(-50%);
@@ -127,10 +127,13 @@
 
     span {
       margin-right: 0;
-      padding-bottom: 2px;
+      padding-bottom: 3px;
       font-weight: 500;
       font-variant: small-caps;
-      border-bottom: 1px dashed $color-blue;
+      background-size: 100%;
+      background-image: url("../img/city_underline.svg");
+      background-position: left bottom;
+      background-repeat: no-repeat;
     }
   }
 }
@@ -154,7 +157,7 @@
 
 .contacts__curator {
   @include flexible ($align: center);
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
     flex-direction: column;
@@ -223,8 +226,14 @@
     margin-right: 0;
   }
 
+  &:hover {
+    svg {
+      fill: rgba(72, 72, 72, 0.5);
+    }
+  }
+
   a {
-    @include flexible ($justify: center, $align: center);
+    @include flexible ($justify: center);
     width: 24px;
     height: 24px;
   }
