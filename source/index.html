@@ -35,7 +35,7 @@
     <main class="main-content">
       <h1 class="visually-hidden">Израиль</h1>
       <section class="first-screen">
-        <h2 class="visually-hidden">Учеьа в Израиле</h2>
+        <h2 class="visually-hidden">Учеба в Израиле</h2>
         <p>
           Учёба, путешествие и карьера для еврейской молодёжи
         </p>
@@ -68,37 +68,40 @@
           <h2>Программы</h2>
           <div class="programms__content">
             <input class="visually-hidden" type="radio" name="option" id="general">
-            <input class="visually-hidden" type="radio" name="option" id="academic" checked="">
+            <input class="visually-hidden" type="radio" name="option" id="academic" checked>
             <input class="visually-hidden" type="radio" name="option" id="internships">
             <input class="visually-hidden" type="radio" name="option" id="volunteerism">
             <input class="visually-hidden" type="radio" name="option" id="religious">
-            <div class="programms__selectors">
-              <label for="general" tabindex="0">
-                <span>
-                  Общие
-                </span>
-              </label>
-              <label for="academic" tabindex="0">
-                <span>
-                  Академические
-                </span>
-              </label>
-              <label for="internships" tabindex="0">
-                <span>
-                  Стажировки
-                </span>
-              </label>
-              <label for="volunteerism" tabindex="0">
-                <span>
-                  Волонтёрство
-                </span>
-              </label>
-              <label for="religious" tabindex="0">
-                <span>
-                  Религиозные
-                </span>
-              </label>
+            <div class="programms__selectors-wrap">
+              <div class="programms__selectors">
+                <label for="general" tabindex="0">
+                  <span>
+                    Общие
+                  </span>
+                </label>
+                <label for="academic" tabindex="0">
+                  <span>
+                    Академические
+                  </span>
+                </label>
+                <label for="internships" tabindex="0">
+                  <span>
+                    Стажировки
+                  </span>
+                </label>
+                <label for="volunteerism" tabindex="0">
+                  <span>
+                    Волонтёрство
+                  </span>
+                </label>
+                <label for="religious" tabindex="0">
+                  <span>
+                    Религиозные
+                  </span>
+                </label>
+              </div>
             </div>
+
             <ul class="programms__descriptions">
               <li class="programms__tab" id="tab-general">
                 <h3>Общие</h3>
@@ -159,7 +162,7 @@
             <label class="visually-hidden" for="user-phone">
               Номер телефона
             </label>
-            <input type="tel" name="phone" id="user-phone" placeholder="телефон" required pattern="\+7\s[\(][0-9]{3}[\)]\s[0-9]{3}\s[0-9]{2}\s[0-9]{2}">
+            <input class="user-phone-js" type="tel" name="phone" id="user-phone" placeholder="телефон" required maxlength="13">
             <button type="submit">перезвоните мне</button>
           </form>
         </div>
@@ -205,7 +208,7 @@
                 <picture>
                   <source srcset="img/img1_live_desktop@x1.webp 1x, img/img1_live_desktop@x2.webp 2x" type="image/webp">
                   <!-- 1х: 482px; 2x: 964px -->
-                  <img src="img/img1_live_desktop@x1.png" srcset="img/img1_live_desktop@x2.png 2x" width="482" height="732" alt="Синагога в Израиле">
+                  <img src="img/img1_live_desktop@x1.png" srcset="img/img1_live_desktop@x2.png 2x" width="482" height="732" alt="Синагога в Израиле" loading="lazy">
                 </picture>
                 <span>
                   Экскурсии по Израилю и&nbsp;знакомство с его<br> историей
@@ -218,7 +221,7 @@
                   <picture>
                     <source srcset="img/img2_live_desktop@x1.webp 1x, img/img2_live_desktop@x2.webp 2x" type="image/webp">
                     <!-- 1х: 211px; 2x: 422px -->
-                    <img src="img/img2_live_desktop@x1.png" srcset="img/img2_live_desktop@x2.png 2x" width="211" height="318" alt="Молодой парень изучает иврит в наушниках">
+                    <img src="img/img2_live_desktop@x1.png" srcset="img/img2_live_desktop@x2.png 2x" width="211" height="318" alt="Молодой парень изучает иврит в наушниках" loading="lazy">
                   </picture>
                   <span>
                     Изучение иврита
@@ -230,7 +233,7 @@
                   <picture>
                     <source srcset="img/img3_live_desktop@x1.webp 1x, img/img3_live_desktop@x2.webp 2x" type="image/webp">
                     <!-- 1х: 411px; 2x: 822px -->
-                    <img src="img/img3_live_desktop@x1.png" srcset="img/img3_live_desktop@x2.png 2x" width="411" height="318" alt="Два парня рассматривающие что-то за монитором">
+                    <img src="img/img3_live_desktop@x1.png" srcset="img/img3_live_desktop@x2.png 2x" width="411" height="318" alt="Два парня рассматривающие что-то за монитором" loading="lazy">
                   </picture>
                   <span>
                     Обучение современным навыкам и профессиям
@@ -242,7 +245,7 @@
                   <picture>
                     <source srcset="img/img4_live_desktop@x1.webp 1x, img/img4_live_desktop@x2.webp 2x" type="image/webp">
                     <!-- 1х: 411px; 2x: 822px -->
-                    <img src="img/img4_live_desktop@x1.png" srcset="img/img4_live_desktop@x2.png 2x" width="411" height="318" alt="Парень и две девушки обнимаются с улыбками на лицах">
+                    <img src="img/img4_live_desktop@x1.png" srcset="img/img4_live_desktop@x2.png 2x" width="411" height="318" alt="Парень и две девушки обнимаются с улыбками на лицах" loading="lazy">
                   </picture>
                   <span>
                     Совместные творческие проекты с израильской молодёжью
@@ -254,7 +257,7 @@
                   <picture>
                     <source srcset="img/img5_live_desktop@x1.webp 1x, img/img5_live_desktop@x2.webp 2x" type="image/webp">
                     <!-- 1х: 214px; 2x: 428px -->
-                    <img src="img/img5_live_desktop@x1.png" srcset="img/img5_live_desktop@x2.png 2x" width="214" height="318" alt="Мужчина на возвышенности наблюдает закат">
+                    <img src="img/img5_live_desktop@x1.png" srcset="img/img5_live_desktop@x2.png 2x" width="214" height="318" alt="Мужчина на возвышенности наблюдает закат" loading="lazy">
                   </picture>
                   <span>
                     Развитие лидерства
@@ -348,7 +351,7 @@
             <picture>
               <source srcset="img/img_questions@x1.webp 1x, img/img_questions@x2.webp 2x" type="image/webp">
               <!-- 1х: 645px; 2x: 1290px -->
-              <img src="img/img_questions@x1.png" srcset="img/img_questions@x2.png 2x" width="645" height="803" alt="Парень и девушка общаются и смеются">
+              <img src="img/img_questions@x1.png" srcset="img/img_questions@x2.png 2x" width="645" height="803" alt="Парень и девушка общаются и смеются" loading="lazy">
             </picture>
           </div>
         </div>
@@ -362,7 +365,7 @@
                 <picture>
                   <source srcset="img/photo_reviews_desktop@x1.webp 1x, img/photo_reviews_desktop@x2.webp 2x" type="image/webp">
                     <!-- 1х: 364px; 2x: 728px -->
-                  <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" srcset="img/photo_reviews_desktop@x2.png 2x" width="364" height="480" alt="Ольга-участник одной из программ">
+                  <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" srcset="img/photo_reviews_desktop@x2.png 2x" width="364" height="480" alt="Ольга-участник одной из программ" loading="lazy">
                 </picture>
                 <div class="feedback__text-wrapper">
                   <h3>Ольга Михайлова</h3>
@@ -405,7 +408,7 @@
                 <picture>
                   <source srcset="img/photo_reviews_desktop@x1.webp 1x, img/photo_reviews_desktop@x2.webp 2x" type="image/webp">
                     <!-- 1х: 364px; 2x: 728px -->
-                  <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" srcset="img/photo_reviews_desktop@x2.png 2x" width="364" height="480" alt="Ольга-участник одной из программ">
+                  <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" srcset="img/photo_reviews_desktop@x2.png 2x" width="364" height="480" alt="Ольга-участник одной из программ" loading="lazy">
                 </picture>
                 <div class="feedback__text-wrapper">
                   <h3>Ольга Михайлова</h3>
@@ -448,7 +451,7 @@
                 <picture>
                   <source srcset="img/photo_reviews_desktop@x1.webp 1x, img/photo_reviews_desktop@x2.webp 2x" type="image/webp">
                     <!-- 1х: 364px; 2x: 728px -->
-                  <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" srcset="img/photo_reviews_desktop@x2.png 2x" width="364" height="480" alt="Ольга-участник одной из программ">
+                  <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" srcset="img/photo_reviews_desktop@x2.png 2x" width="364" height="480" alt="Ольга-участник одной из программ" loading="lazy">
                 </picture>
                 <div class="feedback__text-wrapper">
                   <h3>Ольга Михайлова</h3>
@@ -491,7 +494,7 @@
                 <picture>
                   <source srcset="img/photo_reviews_desktop@x1.webp 1x, img/photo_reviews_desktop@x2.webp 2x" type="image/webp">
                     <!-- 1х: 364px; 2x: 728px -->
-                  <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" srcset="img/photo_reviews_desktop@x2.png 2x" width="364" height="480" alt="Ольга-участник одной из программ">
+                  <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" srcset="img/photo_reviews_desktop@x2.png 2x" width="364" height="480" alt="Ольга-участник одной из программ" loading="lazy">
                 </picture>
                 <div class="feedback__text-wrapper">
                   <h3>Ольга Михайлова</h3>
@@ -534,7 +537,7 @@
                 <picture>
                   <source srcset="img/photo_reviews_desktop@x1.webp 1x, img/photo_reviews_desktop@x2.webp 2x" type="image/webp">
                     <!-- 1х: 364px; 2x: 728px -->
-                  <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" srcset="img/photo_reviews_desktop@x2.png 2x" width="364" height="480" alt="Ольга-участник одной из программ">
+                  <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" srcset="img/photo_reviews_desktop@x2.png 2x" width="364" height="480" alt="Ольга-участник одной из программ" loading="lazy">
                 </picture>
                 <div class="feedback__text-wrapper">
                   <h3>Ольга Михайлова</h3>
@@ -577,7 +580,7 @@
                 <picture>
                   <source srcset="img/photo_reviews_desktop@x1.webp 1x, img/photo_reviews_desktop@x2.webp 2x" type="image/webp">
                     <!-- 1х: 364px; 2x: 728px -->
-                  <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" srcset="img/photo_reviews_desktop@x2.png 2x" width="364" height="480" alt="Ольга-участник одной из программ">
+                  <img class="feedback__img-author" src="img/photo_reviews_desktop@x1.png" srcset="img/photo_reviews_desktop@x2.png 2x" width="364" height="480" alt="Ольга-участник одной из программ" loading="lazy">
                 </picture>
                 <div class="feedback__text-wrapper">
                   <h3>Ольга Михайлова</h3>
@@ -716,7 +719,7 @@
                 <label class="visually-hidden" for="contacts-phone">
                   Телефон
                 </label>
-                <input id="contacts-phone" type="tel" name="phone" placeholder="телефон" required pattern="\+7\s[\(][0-9]{3}[\)]\s[0-9]{3}\s[0-9]{2}\s[0-9]{2}">
+                <input class="user-phone-js" id="contacts-phone" type="tel" name="phone" placeholder="телефон" required maxlength="13">
               </div>
               <button type="submit">перезвоните мне</button>
             </form>
@@ -780,7 +783,7 @@
             <label class="visually-hidden" for="modal-phone">
               Телефон
             </label>
-            <input id="modal-phone" type="tel" name="phone" placeholder="телефон" required pattern="\+7\s[\(][0-9]{3}[\)]\s[0-9]{3}\s[0-9]{2}\s[0-9]{2}">
+            <input class="user-phone-js" id="modal-phone" type="tel" name="phone" placeholder="телефон" required maxlength="13">
           </div>
           <button class="modal__btn modal__btn--submit" type="submit">перезвоните мне</button>
           <div class="form-group form-group--modal">

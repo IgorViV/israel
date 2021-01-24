@@ -59,7 +59,7 @@
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    // overflow: hidden;
   }
 }
 
@@ -73,7 +73,7 @@
     align-items: center;
     align-self: flex-start;
     min-height: 48px;
-    margin-left: -44px;
+    // margin-left: -44px;
     margin-right: 0;
     margin-bottom: 32px;
   }
@@ -214,11 +214,17 @@
   }
 }
 
-input[id="general"]:checked ~ .programms__selectors label[for="general"],
-input[id="academic"]:checked ~ .programms__selectors label[for="academic"],
-input[id="internships"]:checked ~ .programms__selectors label[for="internships"],
-input[id="volunteerism"]:checked ~ .programms__selectors label[for="volunteerism"],
-input[id="religious"]:checked ~ .programms__selectors label[for="religious"] {
+.programms__selectors-wrap {
+  width: 100%;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+input[id="general"]:checked ~ .programms__selectors-wrap label[for="general"],
+input[id="academic"]:checked ~ .programms__selectors-wrap label[for="academic"],
+input[id="internships"]:checked ~ .programms__selectors-wrap label[for="internships"],
+input[id="volunteerism"]:checked ~ .programms__selectors-wrap label[for="volunteerism"],
+input[id="religious"]:checked ~ .programms__selectors-wrap label[for="religious"] {
   margin-bottom: 20px;
   position: relative;
   font-weight: 500;
@@ -279,7 +285,7 @@ input[id="religious"]:checked ~ .programms__selectors label[for="religious"] {
   }
 }
 
-input[id="general"]:checked ~ .programms__selectors label[for="general"] {
+input[id="general"]:checked ~ .programms__selectors-wrap label[for="general"] {
   margin-top: -16px;
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
@@ -287,7 +293,7 @@ input[id="general"]:checked ~ .programms__selectors label[for="general"] {
   }
 }
 
-input[id="academic"]:checked ~ .programms__selectors label[for="academic"] {
+input[id="academic"]:checked ~ .programms__selectors-wrap label[for="academic"] {
   span {
     &::before {
       background-image: url("../img/icon_cap_white.png");
@@ -295,7 +301,7 @@ input[id="academic"]:checked ~ .programms__selectors label[for="academic"] {
   }
 }
 
-input[id="internships"]:checked ~ .programms__selectors label[for="internships"] {
+input[id="internships"]:checked ~ .programms__selectors-wrap label[for="internships"] {
   span {
     &::before {
       background-image: url("../img/icon_case_white.png");
@@ -303,7 +309,7 @@ input[id="internships"]:checked ~ .programms__selectors label[for="internships"]
   }
 }
 
-input[id="volunteerism"]:checked ~ .programms__selectors label[for="volunteerism"] {
+input[id="volunteerism"]:checked ~ .programms__selectors-wrap label[for="volunteerism"] {
   span {
     &::before {
       background-image: url("../img/icon_hand_white.png");
@@ -311,7 +317,7 @@ input[id="volunteerism"]:checked ~ .programms__selectors label[for="volunteerism
   }
 }
 
-input[id="religious"]:checked ~ .programms__selectors label[for="religious"] {
+input[id="religious"]:checked ~ .programms__selectors-wrap label[for="religious"] {
   margin-bottom: 0;
   margin-top: -20px;
 
@@ -326,29 +332,29 @@ input[id="religious"]:checked ~ .programms__selectors label[for="religious"] {
   }
 }
 
-input[id="academic"]:checked ~ .programms__selectors {
-  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    align-self: flex-start;
-  }
-}
+// input[id="academic"]:checked ~ .programms__selectors {
+//   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+//     align-self: flex-start;
+//   }
+// }
 
-input[id="internships"]:checked ~ .programms__selectors {
-  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    align-self: center;
-  }
-}
+// input[id="internships"]:checked ~ .programms__selectors {
+//   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+//     align-self: center;
+//   }
+// }
 
-input[id="volunteerism"]:checked ~ .programms__selectors {
-  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    align-self: flex-end;
-  }
-}
+// input[id="volunteerism"]:checked ~ .programms__selectors {
+//   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+//     align-self: flex-end;
+//   }
+// }
 
-input[id="religious"]:checked ~ .programms__selectors {
-  @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    align-self: flex-end;
-  }
-}
+// input[id="religious"]:checked ~ .programms__selectors {
+//   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
+//     align-self: flex-end;
+//   }
+// }
 
 .programms__descriptions {
   max-width: 560px;

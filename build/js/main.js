@@ -1,7 +1,7 @@
 'use strict';
 
 // modal:
-// (function () {
+// (function myModal() {
 //   var buttonOrderCall = document.querySelector('.page-header__btn');
 //   var formWantToGo = document.forms.want;
 //   var formContacts = document.forms.contacts;
@@ -217,10 +217,10 @@
 //       action();
 //     }
 //   }
-// })();
+// }());
 
 // life slider:
-(function () {
+(function sliderLife() {
   var blockLife = document.querySelector('.life');
   var lifeSlider = blockLife.querySelector('.life__slider');
   var sliderControls = blockLife.querySelector('.life__slider-controls');
@@ -287,10 +287,10 @@
     var transValue = 'transform: translateX(' + currentIndex * (-20) + '%)';
     lifeSlider.setAttribute('style', transValue);
   }
-})();
+}());
 
 // accordion:
-(function () {
+(function myAccordion() {
   var accordion = document.querySelector('.accordion');
 
   if (accordion) {
@@ -306,10 +306,10 @@
       elemDt.classList.toggle('accordion__item-header--active');
     });
   }
-})();
+}());
 
 // feedback slider:
-(function () {
+(function sliderFeedback() {
   var feedbackSlider = document.querySelector('.feedback__slider');
   var feedbackSliderList = feedbackSlider.querySelector('.feedback__slider-list');
   var feedbackSliderItems = feedbackSlider.querySelectorAll('.feedback__slider-item');
@@ -397,4 +397,4 @@
   function setSumSlides(sumSlides) {
     feedbackSlideSum.textContent = sumSlides;
   }
-})();
+}());
