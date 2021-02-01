@@ -282,6 +282,11 @@
   }
 
   window.addEventListener('resize', function () {
+    if (getElemWidth(blockLife) > MOBILE_BREAKPOINT) {
+      removeBtnActive(sliderBtn[currentPosition.currentSlide]);
+      currentPosition.currentSlide = 0;
+      addBtnActive(sliderBtn[currentPosition.currentSlide]);
+    } 
     transformSlider(currentPosition.currentSlide);
   });
 
