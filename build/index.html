@@ -159,11 +159,13 @@
             Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на все вопросы!
           </p>
           <form class="want-to-go__form form form--want-to-go" name="want" action="#" method="POST">
-            <label class="visually-hidden" for="user-phone">
-              Номер телефона
-            </label>
-            <input class="user-phone-js" type="tel" name="phone" id="user-phone" placeholder="телефон" required="" maxlength="13">
-            <button type="submit">перезвоните мне</button>
+            <div class="form__group form__group--want-to-go">
+              <label class="visually-hidden" for="user-phone">
+                Номер телефона
+              </label>
+              <input class="js-user-phone" type="tel" name="phone" id="user-phone" placeholder="телефон" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\s]\d{2}[\s]\d{2}" minlength="18" maxlength="18" required="">
+            </div>
+            <button class="js-button-submit" type="submit">перезвоните мне</button>
           </form>
         </div>
       </section>
@@ -713,15 +715,15 @@
                 <label class="visually-hidden" for="contacts-name">
                   Имя
                 </label>
-                <input id="contacts-name" type="text" name="name" placeholder="имя" required="">
+                <input id="contacts-name" type="text" name="name" placeholder="имя" required="" autocomplete="on">
               </div>
               <div class="form__group form__group--contacts">
                 <label class="visually-hidden" for="contacts-phone">
                   Телефон
                 </label>
-                <input class="user-phone-js" id="contacts-phone" type="tel" name="phone" placeholder="телефон" required="">
+                <input class="js-user-phone" id="contacts-phone" type="tel" name="phone" placeholder="телефон" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\s]\d{2}[\s]\d{2}" minlength="18" maxlength="18" required="">
               </div>
-              <button type="submit">перезвоните мне</button>
+              <button class="js-button-submit" type="submit">перезвоните мне</button>
             </form>
           </div>
         </div>
@@ -766,46 +768,57 @@
     </footer>
   </div>
   <!-- Модальные окна -->
-  <div class="modal-overlay modal-overlay--hidden">
-    <!-- Заказать звонок -->
-    <div class="modal modal--order-call modal--hidden">
-      <div class="modal__content-wrapper">
-        <h3 class="modal__title">Заказать звонок</h3>
-        <p class="modal__text">Оставьте ваши контактные данные, мы&nbsp;свяжемся с&nbsp;вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
-        <form class="modal__form form form--modal" name="modalcall" action="#" method="POST">
-          <div class="form-group form-group--modal">
-            <label class="visually-hidden" for="modal-name">
-              Имя
-            </label>
-            <input id="modal-name" type="text" name="name" placeholder="имя" required="">
-          </div>
-          <div class="form-group form-group--modal">
-            <label class="visually-hidden" for="modal-phone">
-              Телефон
-            </label>
-            <input class="user-phone-js" id="modal-phone" type="tel" name="phone" placeholder="телефон" required="" maxlength="13">
-          </div>
-          <button class="modal__btn modal__btn--submit" type="submit">перезвоните мне</button>
-          <div class="form-group form-group--modal">
-            <input type="checkbox" id="modal-consent" name="consent">
-            <label for="modal-consent">
-              Нажимая на кнопку, вы даёте согласие на обработку персональных данных
-            </label>
-          </div>
-        </form>
+  <!-- Заказать звонок -->
+  <div class="modal" id="modal--order-call" aria-hidden="true">
+    <div class="modal__wrap">
+      <div class="modal__window" role="dialog" aria-modal="true">
+        <div class="modal__content">
+          <h3>Заказать звонок</h3>
+          <p>Оставьте ваши контактные данные, мы&nbsp;свяжемся с&nbsp;вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
+          <form class="modal__form form form--modal" name="modalcall" action="#" method="POST">
+            <div class="form-group form-group--modal">
+              <label class="visually-hidden" for="modal-name">
+                Имя
+              </label>
+              <input id="modal-name" type="text" name="name" placeholder="имя" required="" autofocus="autofocus" autocomplete="on">
+            </div>
+            <div class="form-group form-group--modal">
+              <label class="visually-hidden" for="modal-phone">
+                Телефон
+              </label>
+              <input class="js-user-phone" id="modal-phone" type="tel" name="phone" placeholder="телефон" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\s]\d{2}[\s]\d{2}" minlength="18" maxlength="18" required="">
+            </div>
+            <button class="modal__btn modal__btn--submit js-button-submit" type="submit">перезвоните мне</button>
+            <div class="form-group form-group--modal">
+              <input type="checkbox" id="modal-consent" name="consent">
+              <label for="modal-consent">
+                Нажимая на кнопку, вы даёте согласие на обработку персональных данных
+              </label>
+            </div>
+          </form>
+        </div>
+        <button class="modal__btn-close modal__btn-close--call" type="button" title="Закрыть окно"></button>
       </div>
-      <button class="modal__btn-close modal__btn-close--call" type="button" title="Закрыть окно"></button>
-    </div>
-  <!-- Заявка принята -->
-    <div class="modal modal--accepted modal--hidden">
-      <div class="modal__content-wrapper modal__content-wrapper--accepted">
-        <h3 class="modal__title modal__title--accepted">Заявка принята</h3>
-        <p class="modal__text modal__text--accepted">Мы приняли ваши данные и вскоре мы перезвоним вам для уточнения деталей!</p>
-        <button class="modal__btn modal__btn--accepted" type="button">Понятно</button>
-      </div>
-      <button class="modal__btn-close modal__btn-close--accepted" type="button" title="Закрыть окно"></button>
     </div>
   </div>
+  <!-- Заявка принята -->
+  <div class="modal" id="modal--accepted" aria-hidden="true">
+    <div class="modal__wrap">
+      <div class="modal__window" role="dialog" aria-modal="true">
+        <div class="modal__content modal__content--accepted">
+          <h3>Заявка принята</h3>
+          <p>Мы приняли ваши данные и вскоре мы перезвоним вам для уточнения деталей!</p>
+          <button class="modal__btn modal__btn--accepted" type="button">Понятно</button>
+        </div>
+        <button class="modal__btn-close modal__btn-close--accepted" type="button" title="Закрыть окно"></button>
+      </div>
+    </div>
+  </div>
+  <div class="modal__shadow"></div>
+  <!-- Шаблон сообщения об ошибке -->
+  <template id="error-message">
+    <p class="form__error-message" role="status" aria-live="polite">Ошибка: неверный формат</p>
+  </template>
   <script src="js/main.js"></script>
 </body>
 </html>

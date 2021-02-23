@@ -12,6 +12,7 @@
 
     @include font-primary($weight: 500, $size: 17px, $lh: 20px, $colorfont: rgba(72, 72, 72, 0.5));
     font-variant: small-caps;
+    color: rgba(72, 72, 72, 0.87);
     border: 2px solid #e3e3e3;
     border-radius: 80px;
     outline: none;
@@ -32,6 +33,14 @@
       font-variant: small-caps;
       color: rgba(72, 72, 72, 0.5);
     }
+
+    &:required:valid {
+      border: 2px solid #484848;
+    }
+
+    &.js-error {
+      border: 2px solid #ff0000;
+    }
   }
 
   input[type="tel"] {
@@ -50,17 +59,17 @@
   }
 
   button {
-    padding-top: 21px;
+    padding-top: 20px;
     padding-left: 40px;
     padding-right: 40px;
-    padding-bottom: 22px;
+    padding-bottom: 20px;
 
     @include font-primary($weight: 500, $size: 17px, $lh: 20px, $colorfont: #ffffff);
     text-align: center;
     font-variant: small-caps;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
     background: $color-gradient;
-    border: none;
+    border-color: transparent;
     border-radius: 80px;
     cursor: pointer;
 
@@ -72,15 +81,23 @@
       background: radial-gradient(150% 119.49% at 50% 50.85%, rgba(0, 0, 0, 0) 30.67%, rgba(3, 3, 3, 0.24) 100%), #ffc341;
     }
   }
+
+  .form__error-message {
+    @include reset;
+    margin-top: 8px;
+    padding-left: 24px;
+
+    @include font-primary($weight: 400, $size: 13px, $lh: 19px, $colorfont: rgba(255, 0, 0, 0.75));
+  }
 }
 
 .form--want-to-go {
+  flex-direction: column;
+  justify-content: center;
   position: relative;
   width: 477px;
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100%;
   }
@@ -93,9 +110,8 @@
 
   button {
     position: absolute;
-    top: 50%;
+    top: 0;
     right: 0;
-    transform: translateY(-50%);
     z-index: 10;
 
     @media (min-width: $mobile) and (max-width: $tablet - 1px) {
@@ -124,6 +140,8 @@
   button {
     width: 216px;
     margin-right: 0;
+    padding-left: 38px;
+    padding-right: 38px;
     padding-bottom: 18px;
 
     @media (min-width: $mobile) and (max-width: $desktop - 1px) {
@@ -132,7 +150,6 @@
     }
   }
 }
-
 
 .form__group--contacts {
   width: 250px;
@@ -158,12 +175,6 @@
     width: 360px;
     padding: 19px 40px 20px 40px;
 
-    @include font-primary($weight: 500, $size: 17px, $lh: 20px, $colorfont: rgba(72, 72, 72, 0.5));
-    font-variant: small-caps;
-    border: 2px solid #e3e3e3;
-    border-radius: 80px;
-    outline: none;
-
     @media (min-width: $mobile) and (max-width: $tablet - 1px) {
       width: 288px;
     }
@@ -175,15 +186,6 @@
     &:focus {
       border-color: #ffc92c;
     }
-
-    &::placeholder {
-      font-family: inherit;
-      font-weight: 500;
-      font-size: 17px;
-      line-height: 20px;
-      font-variant: small-caps;
-      color: rgba(72, 72, 72, 0.5);
-    }
   }
 
   button {
@@ -193,24 +195,6 @@
     margin-bottom: 16px;
     padding-top: 19px;
     padding-bottom: 20px;
-
-    @include font-primary($weight: 500, $size: 17px, $lh: 20px, $colorfont: #ffffff);
-    text-align: center;
-    font-variant: small-caps;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
-    background: $color-gradient;
-    border: none;
-    border-radius: 80px;
-    cursor: pointer;
-    outline: none;
-
-    &:hover {
-      background: #ffc341;
-    }
-
-    &:active {
-      background: radial-gradient(150% 119.49% at 50% 50.85%, rgba(0, 0, 0, 0) 30.67%, rgba(3, 3, 3, 0.24) 100%), #ffc341;
-    }
   }
 }
 
