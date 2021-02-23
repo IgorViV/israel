@@ -242,8 +242,8 @@
           input.classList.add('js-error');
 
           createErrorMessage(input);
-
           addInputListener(input);
+          addInputFocusListener(input);
           setValidation = false;
         }
         if (input.checkValidity() === true) {
@@ -273,6 +273,16 @@
 
   function addInputListener(input) {
     input.addEventListener('input', function () {
+      if (input.classList.contains('js-error')) {
+        input.classList.remove('js-error');
+      }
+
+      removeErrorMessage(input);
+    });
+  }
+
+  function addInputFocusListener(input) {
+    input.addEventListener('focus', function () {
       if (input.classList.contains('js-error')) {
         input.classList.remove('js-error');
       }
@@ -353,11 +363,7 @@
       removeBtnActive(sliderBtn[currentPosition.currentSlide]);
       currentPosition.currentSlide = 0;
       addBtnActive(sliderBtn[currentPosition.currentSlide]);
-<<<<<<< HEAD
     }
-=======
-    }
->>>>>>> 4837e6f4c3120bfc519f8f7426c227a8fef9f3ef
     transformSlider(currentPosition.currentSlide);
   });
 
