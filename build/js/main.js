@@ -57,7 +57,7 @@
       onModalOkOpen();
     }
 
-    setValidation = false; // FIXME: исправить признак валидности всей формы
+    setValidation = false;
   });
 
   btnCloseAccepted.addEventListener('click', function () {
@@ -221,7 +221,7 @@
         onModalOkOpen();
       }
 
-      setValidation = false; // FIXME: исправить признак валидности всей формы
+      setValidation = false;
     });
   }
 
@@ -231,7 +231,7 @@
     if (!inputs.length) {
       return;
     }
-console.log('Modal inputs: ' + inputs.length);
+
     for (var i = 0; i < inputs.length; i++) {
 
       var input = inputs[i];
@@ -253,21 +253,6 @@ console.log('Modal inputs: ' + inputs.length);
           setValidation = true;
         }
       }
-
-      // if (input.checkValidity() === false) {
-      //   input.classList.add('js-error');
-
-      //   createErrorMessage(input);
-
-      //   addInputListener(input);
-      //   setValidation = false;
-      // }
-      // if (input.checkValidity() === true) {
-      //   if (input.classList.contains('js-error')) {
-      //     input.classList.remove('js-error');
-      //   }
-      //   setValidation = true;
-      // }
     }
   }
 
@@ -507,20 +492,6 @@ console.log('Modal inputs: ' + inputs.length);
 
   setSliderNumber(1);
   setSumSlides(feedbackSliderItems.length);
-
-  // feedbackSliderList.addEventListener('touchstart', function (evtTouch) {
-  // clickPosition.xStart = getMouseXPosition(evt);
-
-  // document.addEventListener('touchmove', onMouseMove);
-  // document.addEventListener('touchend', onMouseUp);
-  // });
-
-  // feedbackSliderList.addEventListener('mousedown', function (evtMouse) {
-  // clickPosition.xStart = getMouseXPosition(evt);
-
-  // document.addEventListener('mousemove', onMouseMove);
-  // document.addEventListener('mouseup', onMouseUp);
-  // });
 
   feedbackSliderControl.addEventListener('click', function (evt) {
     evt.preventDefault();
