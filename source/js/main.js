@@ -235,7 +235,7 @@
     for (var i = 0; i < inputs.length; i++) {
 
       var input = inputs[i];
-      var attrInput = input.getAttribute('type');
+      var attrInput = input.getAttribute('type'); // type="checkbox"
 
       if (attrInput !== 'checkbox') {
         if (input.checkValidity() === false) {
@@ -244,7 +244,6 @@
           createErrorMessage(input);
 
           addInputListener(input);
-          addInputFocusListener(input)
           setValidation = false;
         }
         if (input.checkValidity() === true) {
@@ -274,16 +273,6 @@
 
   function addInputListener(input) {
     input.addEventListener('input', function () {
-      if (input.classList.contains('js-error')) {
-        input.classList.remove('js-error');
-      }
-
-      removeErrorMessage(input);
-    });
-  }
-
-  function addInputFocusListener(input) {
-    input.addEventListener('focus', function () {
       if (input.classList.contains('js-error')) {
         input.classList.remove('js-error');
       }
@@ -461,7 +450,7 @@
       onTabChangState(evt);
     });
 
-    // TODO: добавить открытие вкладок с клавиатуры
+    // добавить открытие вкладок с клавиатуры
   }
 
   function onTabChangState(evt) {

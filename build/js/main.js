@@ -57,7 +57,7 @@
       onModalOkOpen();
     }
 
-    setValidation = false;
+    setValidation = false; // FIXME: исправить признак валидности всей формы
   });
 
   btnCloseAccepted.addEventListener('click', function () {
@@ -221,7 +221,7 @@
         onModalOkOpen();
       }
 
-      setValidation = false;
+      setValidation = false; // FIXME: исправить признак валидности всей формы
     });
   }
 
@@ -231,11 +231,11 @@
     if (!inputs.length) {
       return;
     }
-
+console.log('Modal inputs: ' + inputs.length);
     for (var i = 0; i < inputs.length; i++) {
 
       var input = inputs[i];
-      var attrInput = input.getAttribute('type');
+      var attrInput = input.getAttribute('type'); // type="checkbox"
 
       if (attrInput !== 'checkbox') {
         if (input.checkValidity() === false) {
@@ -244,7 +244,6 @@
           createErrorMessage(input);
 
           addInputListener(input);
-          addInputFocusListener(input)
           setValidation = false;
         }
         if (input.checkValidity() === true) {
@@ -254,6 +253,21 @@
           setValidation = true;
         }
       }
+
+      // if (input.checkValidity() === false) {
+      //   input.classList.add('js-error');
+
+      //   createErrorMessage(input);
+
+      //   addInputListener(input);
+      //   setValidation = false;
+      // }
+      // if (input.checkValidity() === true) {
+      //   if (input.classList.contains('js-error')) {
+      //     input.classList.remove('js-error');
+      //   }
+      //   setValidation = true;
+      // }
     }
   }
 
@@ -274,16 +288,6 @@
 
   function addInputListener(input) {
     input.addEventListener('input', function () {
-      if (input.classList.contains('js-error')) {
-        input.classList.remove('js-error');
-      }
-
-      removeErrorMessage(input);
-    });
-  }
-
-  function addInputFocusListener(input) {
-    input.addEventListener('focus', function () {
       if (input.classList.contains('js-error')) {
         input.classList.remove('js-error');
       }
@@ -461,7 +465,7 @@
       onTabChangState(evt);
     });
 
-    // TODO: добавить открытие вкладок с клавиатуры
+    // добавить открытие вкладок с клавиатуры
   }
 
   function onTabChangState(evt) {
@@ -503,6 +507,20 @@
 
   setSliderNumber(1);
   setSumSlides(feedbackSliderItems.length);
+
+  // feedbackSliderList.addEventListener('touchstart', function (evtTouch) {
+  // clickPosition.xStart = getMouseXPosition(evt);
+
+  // document.addEventListener('touchmove', onMouseMove);
+  // document.addEventListener('touchend', onMouseUp);
+  // });
+
+  // feedbackSliderList.addEventListener('mousedown', function (evtMouse) {
+  // clickPosition.xStart = getMouseXPosition(evt);
+
+  // document.addEventListener('mousemove', onMouseMove);
+  // document.addEventListener('mouseup', onMouseUp);
+  // });
 
   feedbackSliderControl.addEventListener('click', function (evt) {
     evt.preventDefault();
