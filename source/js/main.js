@@ -353,7 +353,11 @@
       removeBtnActive(sliderBtn[currentPosition.currentSlide]);
       currentPosition.currentSlide = 0;
       addBtnActive(sliderBtn[currentPosition.currentSlide]);
+<<<<<<< HEAD
     }
+=======
+    }
+>>>>>>> 4837e6f4c3120bfc519f8f7426c227a8fef9f3ef
     transformSlider(currentPosition.currentSlide);
   });
 
@@ -450,7 +454,7 @@
       onTabChangState(evt);
     });
 
-    // добавить открытие вкладок с клавиатуры
+    // TODO: добавить открытие вкладок с клавиатуры
   }
 
   function onTabChangState(evt) {
