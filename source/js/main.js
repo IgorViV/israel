@@ -452,7 +452,7 @@
 // accordion:
 (function myAccordion() {
   var accordion = document.querySelector('.accordion');
-  // var ENTER_KEYCODE = 13;
+  var ENTER_KEYCODE = 13;
 
   if (accordion) {
     accordion.addEventListener('click', function (evt) {
@@ -460,7 +460,18 @@
       onTabChangState(evt);
     });
 
-    // TODO: добавить открытие вкладок с клавиатуры
+    accordion.addEventListener('keydown', function (evt) {
+      if (evt.keyCode === ENTER_KEYCODE) {
+        var arrDt = accordion.querySelectorAll('dt');
+        for (var i = 0; i < arrDt.length; i++) {
+          var currentDt = arrDt[i];
+
+          if (currentDt === document.activeElement) {
+            currentDt.classList.toggle('accordion__item-header--active');
+          }
+        }
+      }
+    });
   }
 
   function onTabChangState(evt) {
@@ -475,13 +486,8 @@
     }
     elemDt.classList.toggle('accordion__item-header--active');
   }
-
-  // function isEnterEvent(evt, action) {
-  //   if (evt.keyCode === ENTER_KEYCODE) {
-  //     action();
-  //   }
-  // }
 }());
+
 
 // feedback slider:
 (function sliderFeedback() {
@@ -497,28 +503,91 @@
   var transformValue = 0;
   var position = {
     getMin: 0,
-    getMax: feedbackSliderItems.length - 1
+    getMax: feedbackSliderItems.length - 1,
+    xStart: 0,
+    xEnd: 0,
+    xShift: 0
   };
 
   setSliderNumber(1);
   setSumSlides(feedbackSliderItems.length);
 
-  feedbackSliderControl.addEventListener('click', function (evt) {
-    evt.preventDefault();
-    var btn = evt.target.closest('button');
-    if (!btn) {
-      return;
-    }
-    if (!feedbackSliderControl.contains(btn)) {
-      return;
-    }
+  // SWIPE ======================================================
 
-    var direction = btn.classList.contains('feedback__btn--next') ? 'right' : 'left';
+  feedbackSliderList.addEventListener('touchstart', function (evt) {
+    position.xStart = getXPosition(evt);
 
-    transformFeedbackItem(direction);
+    document.addEventListener('touchmove', onMouseMove);
+    document.addEventListener('touchend', onMouseUp);
   });
 
+  feedbackSliderList.addEventListener('mousedown', function (evt) {
+    position.xStart = getXPosition(evt);
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+  });
+
+  function getXPosition(evt) {
+    return evt.clientX || evt.touches[0].clientX;
+  }
+
+  function onMouseMove(evt) {
+    position.xEnd = getXPosition(evt);
+    position.xShift = position.xEnd - position.xStart;
+    onFeedbackItemMove();
+  }
+
+  function getDirectionMove() {
+    var directionMove;
+    if (position.xShift < 0 && positionLeftItem < feedbackSliderItems.length - 1) {
+      directionMove = 'right';
+    }
+
+    if (position.xShift > 0 && positionLeftItem !== 0) {
+      directionMove = 'left';
+    }
+
+    return directionMove;
+  }
+
+  function onMouseUp() {
+    transformFeedbackItem(getDirectionMove());
+    document.removeEventListener('mousemove', onMouseMove);
+    document.removeEventListener('mouseup', onMouseUp);
+    document.removeEventListener('touchmove', onMouseMove);
+    document.removeEventListener('touchend', onMouseUp);
+  }
+
+  function onFeedbackItemMove() {
+    var transMoveValue = transformValue;
+    if (positionLeftItem === 0 && position.xShift > 0 || positionLeftItem === (feedbackSliderItems.length - 1) && position.xShift < 0) {
+      transMoveValue = transMoveValue + (position.xShift / parseFloat(getComputedStyle(feedbackSliderItems[positionLeftItem]).width) / 2) * 100;
+    } else {
+      transMoveValue = transMoveValue + position.xShift / parseFloat(getComputedStyle(feedbackSliderItems[positionLeftItem]).width) * 100;
+    }
+
+    feedbackSliderList.style.transform = 'translateX(' + transMoveValue + '%)';
+  }
+
+  // END SWIPE ================================================
+
+  if (feedbackSliderControl) {
+    feedbackSliderControl.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      var btn = evt.target.closest('button');
+      if (!btn) {
+        return;
+      }
+      if (!feedbackSliderControl.contains(btn)) {
+        return;
+      }
+      var direction = btn.classList.contains('feedback__btn--next') ? 'right' : 'left';
+      transformFeedbackItem(direction);
+    });
+  }
+
   window.addEventListener('resize', function () {
+    // TODO: переделать чтобы оставался тотже слайд при resize
     setSliderNumber(1);
     feedbackSliderList.style.transform = 'translateX(0%)';
     if (!feedbackBtnPrev.disabled) {

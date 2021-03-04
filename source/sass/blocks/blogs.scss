@@ -3,9 +3,10 @@
   padding-top: 120px;
   padding-right: 167px;
   padding-bottom: 196px;
-  background-size: 1361px 583px;
+  background-size: 1366px auto;
+  background-color: #947d91;
   background-image: url("../img/bg_hashtag_desktop@x1.jpg");
-  background-position: left 5px top;
+  background-position: left top;
   background-repeat: no-repeat;
 
   @media (min-resolution: 144dpi),
@@ -18,6 +19,7 @@
     padding-top: 0;
     padding-right: 0;
     padding-bottom: 0;
+    background-color: transparent;
     background-size: 632px auto;
     background-position: left -69px top 44px;
   }
@@ -54,6 +56,7 @@
   }
 
   p {
+    position: relative;
     margin: 0;
     margin-bottom: 48px;
     padding-left: 3px;
@@ -71,6 +74,17 @@
       padding-right: 23px;
       font-size: 16px;
       line-height: 26px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: #947d91;
     }
   }
 

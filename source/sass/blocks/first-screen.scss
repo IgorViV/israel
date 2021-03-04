@@ -4,9 +4,10 @@
   flex-direction: column;
   align-items: center;
   max-width: 1366px;
+  min-height: 879px;
   margin: 0 auto;
   padding-top: 538px;
-  padding-bottom: 130px;
+  background-color: #d8bd9c;
   background-size: 1366px auto, 1018px auto, 1366px auto;
   background-image: url("../img/bg_first_girl_desktop@x1.png"), url("../img/bg_israel_desktop@x1.png"), url("../img/bg_first_desktop@x1.jpg");
   background-position: center top, center top 160px, center top;
@@ -23,10 +24,10 @@
   }
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
-    padding-top: 335px;
-    padding-bottom: 86px;
+    min-height: 587px;
+    padding-top: 303px;
     background-size: 912px auto, 347px auto, 912px auto;
-    background-position: center top 32px, center top 168px, center top 32px;
+    background-position: center top, center top 140px, center top;
   }
 
   p {
