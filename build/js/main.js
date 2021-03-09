@@ -161,6 +161,10 @@
   }
 
   maskPhone('.js-user-phone');
+  submitForm(formWantToGo);
+  submitForm(formContacts);
+
+  // TODO: добавить использование Local Storage
 
   function maskPhone(selector) {
     var elems = document.querySelectorAll(selector);
@@ -199,9 +203,6 @@
     }
   }
 
-  submitForm(formWantToGo);
-  submitForm(formContacts);
-
   function submitForm(elemForm) {
     if (!elemForm) {
       return;
@@ -235,7 +236,7 @@
     for (var i = 0; i < inputs.length; i++) {
 
       var input = inputs[i];
-      var attrInput = input.getAttribute('type'); // type="checkbox"
+      var attrInput = input.getAttribute('type');
 
       if (attrInput !== 'checkbox') {
         if (input.checkValidity() === false) {

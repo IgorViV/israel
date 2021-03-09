@@ -157,7 +157,7 @@
 
 .contacts__curator {
   @include flexible ($align: center);
-  margin-bottom: 28px;
+  margin-bottom: 30px;
 
   @media (min-width: $mobile) and (max-width: $tablet - 1px) {
     flex-direction: column;
@@ -317,7 +317,7 @@
     width: 288px;
     margin-top: 0;
     margin-right: 0;
-    margin-bottom: 32px;
+    margin-bottom: 34px;
   }
 
   p {
