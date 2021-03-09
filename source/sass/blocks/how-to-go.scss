@@ -175,3 +175,10 @@
     max-width: 470px;
   }
 }
+
+.how-to-go__item:last-child {
+  align-items: flex-start;
+  span:first-child {
+    // margin-bottom: 2px;
+  }
+}
