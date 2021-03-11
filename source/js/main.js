@@ -17,13 +17,52 @@
   var scrollPosition = window.pageYOffset;
   var marginSize = window.innerWidth - html.clientWidth;
   var ESC_KEYCODE = 27;
-  var setValidation = false;
+  var isValidationValid = false;
+  var isStorageSupport = true;
+  var storage = {
+    name: '',
+    phone: ''
+  };
+
+  try {
+    storage.name = localStorage.getItem('name');
+    storage.phone = localStorage.getItem('phone');
+  } catch (err) {
+    isStorageSupport = false;
+  }
+
+  getInputLocalStorage(formWantToGo);
+  getInputLocalStorage(formContacts);
+
+  function getInputLocalStorage(nameForm) {
+    if (isStorageSupport) {
+      var inputElements = nameForm.querySelectorAll('input');
+
+      for (var i = 0; i < inputElements.length; i++) {
+        var currentInput = inputElements[i];
+        if (currentInput.getAttribute('name') === 'name') {
+          if (storage.name) {
+            currentInput.value = storage.name;
+          }
+        }
+        if (currentInput.getAttribute('name') === 'phone') {
+          if (storage.phone) {
+            currentInput.value = storage.phone;
+          }
+        }
+      }
+    }
+  }
 
   buttonOrderCall.addEventListener('click', function () {
     scrollPosition = window.pageYOffset;
     marginSize = window.innerWidth - html.clientWidth;
     onModalCallOpen();
-    formModalCall.elements.name.focus();
+    if (!storage.name) {
+      formModalCall.elements.name.focus();
+    } else {
+      getInputLocalStorage(formModalCall);
+    }
   });
 
   btnCloseCall.addEventListener('click', function () {
@@ -51,13 +90,12 @@
     evt.preventDefault();
 
     onValidationInput(formModalCall);
-
-    if (setValidation) {
+    if (isValidationValid) {
       onModalCallClose();
       onModalOkOpen();
     }
 
-    setValidation = false;
+    isValidationValid = false;
   });
 
   btnCloseAccepted.addEventListener('click', function () {
@@ -164,8 +202,6 @@
   submitForm(formWantToGo);
   submitForm(formContacts);
 
-  // TODO: добавить использование Local Storage
-
   function maskPhone(selector) {
     var elems = document.querySelectorAll(selector);
     var masked = '+7 (___) ___ __ __';
@@ -218,11 +254,11 @@
       evt.preventDefault();
 
       onValidationInput(elemForm);
-      if (setValidation) {
+      if (isValidationValid) {
         onModalOkOpen();
       }
 
-      setValidation = false;
+      isValidationValid = false;
     });
   }
 
@@ -234,25 +270,32 @@
     }
 
     for (var i = 0; i < inputs.length; i++) {
-
       var input = inputs[i];
       var attrInput = input.getAttribute('type');
 
       if (attrInput !== 'checkbox') {
+
         if (input.checkValidity() === false) {
           input.classList.add('js-error');
 
           createErrorMessage(input);
           addInputListener(input);
           addInputFocusListener(input);
-          setValidation = false;
         }
         if (input.checkValidity() === true) {
           if (input.classList.contains('js-error')) {
             input.classList.remove('js-error');
           }
-          setValidation = true;
+          if (isStorageSupport) {
+            if (input.getAttribute('name') === 'name') {
+              localStorage.setItem('name', input.value);
+            }
+            if (input.getAttribute('name') === 'phone') {
+              localStorage.setItem('phone', input.value);
+            }
+          }
         }
+        isValidationValid = input.checkValidity();
       }
     }
   }
